@@ -1,4 +1,5 @@
-Bem-vindo ao meu portfólio! Este repositório é uma vitrine dos projetos que desenvolvi ao longo da minha jornada como desenvolvedor. 
+Bem-vindo ao meu portfólio! Este repositório é uma vitrine dos projetos que desenvolvi ao longo da minha jornada como desenvolvedor
+> [EM DESENVOLVIMENTO]
 ##
 🎓 Formação: Graduado em Computer Science.
 
