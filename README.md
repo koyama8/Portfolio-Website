@@ -3,7 +3,7 @@ Bem-vindo ao meu portfólio! Este repositório é uma vitrine dos projetos que d
 ##
 🎓 Formação: Graduado em Computer Science.
 
-🌟 Interesses: Desenvolvimento Web, Angular, TypeScript, React e muito mais.
+🌟 Interesses: Desenvolvimento Web, Angular,React, TypeScript e muito mais.
 
 🚀 Missão: Criar soluções tecnológicas que façam a diferença.
 
