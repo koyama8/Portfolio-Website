@@ -1,36 +1,58 @@
 /*  navbar */
-let menuIcon = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
+let menuIcon = document.querySelector("#menu-icon");
+let navbar = document.querySelector(".navbar");
 
 menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active')
-}
+  menuIcon.classList.toggle("bx-x");
+  navbar.classList.toggle("active");
+};
 
-let sections = document.querySelectorAll('secton');
-let navLinks = document.querySelectorAll('header nav a');
+let sections = document.querySelectorAll("secton");
+let navLinks = document.querySelectorAll("header nav a");
 
 window.onscroll = () => {
-    sections.forEach(sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop - 150;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
+  sections.forEach((sec) => {
+    let top = window.scrollY;
+    let offset = sec.offsetTop - 150;
+    let height = sec.offsetHeight;
+    let id = sec.getAttribute("id");
 
-        if(top >= offset && top < offset + height){
-            navLinks.forEach(links => {
-                links.classList.remove('active');
-                document.querySelector('header nav a[href*=' + id +']').classList.add('active');
-            });
-        };
-    });
+    if (top >= offset && top < offset + height) {
+      navLinks.forEach((links) => {
+        links.classList.remove("active");
+        document
+          .querySelector("header nav a[href*=" + id + "]")
+          .classList.add("active");
+      });
+    }
+  });
 
-    let header = document.querySelector('header')
+  let header = document.querySelector("header");
 
-    /* navbar */
-    header.classList.toggle('sticky',window.scrollY > 100);
+  /* navbar */
+  header.classList.toggle("sticky", window.scrollY > 100);
 
-    /*   */
-    menuIcon.classList.remove('bx-x');
-    navbar.classList.remove('active')
+  /* Desativar  */
+  menuIcon.classList.remove("bx-x");
+  navbar.classList.remove("active");
 };
+
+/*   */
+ScrollReveal({ 
+    //reset: true,
+    distance: '80px',
+    duration:2000,
+    delay:200
+});
+
+ScrollReveal().reveal('.home-content, .heading', {origin: 'top' });
+
+ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', 
+{origin: 'top' });
+
+ScrollReveal().reveal('.home-content h1, .about-img', 
+{origin: 'left' });
+
+ScrollReveal().reveal('.home-content h1, .about-img', 
+{origin: 'right' });
+    
