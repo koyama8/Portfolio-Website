@@ -55,4 +55,14 @@ ScrollReveal().reveal('.home-content h1, .about-img',
 
 ScrollReveal().reveal('.home-content h1, .about-img', 
 {origin: 'right' });
+
+/* */
+const typed = new Typed('.multiple-text',{
+   
+    strings:['Frontend Developer'],
+    typeSpeed:100,
+    backSpeed:100,
+    backDelay:100,
+    loop:true
+});
     
