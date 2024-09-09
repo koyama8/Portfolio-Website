@@ -373,6 +373,8 @@ span {
     background-color: var(--main-color);
     border-radius: .8rem;
     transition: .5s ease;
+    font-size: 14px;
+    text-transform: uppercase;
 }
 
 .footer-iconTop a:hover {
