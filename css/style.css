@@ -533,3 +533,19 @@ footer-iconTop a i {
         margin-top: 2rem;
     }
 }
+
+@media (max-width: 768px) { /* Ajustes para tablets */
+    .footer-iconTop a {
+      padding: 5px;
+      font-size: 9px;
+      border-radius: .7rem;
+    }
+  }
+  
+  @media (max-width: 480px) { /* Ajustes para celulares */
+    .footer-iconTop a {
+      padding: 4px;
+      font-size: 8px;
+      border-radius: .6rem;
+    }
+  }

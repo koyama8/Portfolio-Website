@@ -59,7 +59,7 @@ ScrollReveal().reveal('.home-content h1, .about-img',
 /* */
 const typed = new Typed('.multiple-text',{
    
-    strings:['Frontend Developer','UX/UI Design'],
+    strings:['Automação', 'UX/UI Design'],
     typeSpeed:100,
     backSpeed:100,
     backDelay:100,
