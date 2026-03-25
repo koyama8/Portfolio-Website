@@ -6,7 +6,6 @@ const sections = document.querySelectorAll("section[id]");
 const navLinks = document.querySelectorAll("header nav a");
 const header = document.querySelector(".header");
 const scrollProgress = document.querySelector(".scroll-progress");
-const heroBadge = document.querySelector(".hero-badge");
 
 const setMenuState = (isOpen) => {
   if (!menuToggle || !headerMenu || !navIcon) {
@@ -98,30 +97,6 @@ window.addEventListener("scroll", handleScroll);
 window.addEventListener("load", () => {
   handleScroll();
 });
-
-if (heroBadge && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  let animationFrameId = 0;
-  let startTime = 0;
-
-  const animateHeroBadge = (timestamp) => {
-    if (!startTime) {
-      startTime = timestamp;
-    }
-
-    const elapsed = timestamp - startTime;
-    const x = Math.sin(elapsed / 2600) * 3;
-    const y = Math.cos(elapsed / 3200) * 4;
-
-    heroBadge.style.transform = `translate3d(${x}px, ${y}px, 0)`;
-    animationFrameId = window.requestAnimationFrame(animateHeroBadge);
-  };
-
-  animationFrameId = window.requestAnimationFrame(animateHeroBadge);
-
-  window.addEventListener("beforeunload", () => {
-    window.cancelAnimationFrame(animationFrameId);
-  });
-}
 
 if (window.ScrollReveal) {
   const sr = ScrollReveal({
