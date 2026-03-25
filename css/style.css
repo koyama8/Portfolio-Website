@@ -366,20 +366,6 @@ ul {
     margin-bottom: 0;
 }
 
-.hero-availability {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.9rem;
-    min-height: 4.6rem;
-    padding: 0 1.6rem;
-    border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    background: rgba(255, 255, 255, 0.04);
-    color: #dbe6fb;
-    font-size: 1.3rem;
-    white-space: nowrap;
-}
-
 .hero-copy {
     display: grid;
     gap: 0.8rem;
@@ -424,7 +410,6 @@ ul {
 .panel-badge,
 .services-box li,
 .contact-panel li,
-.metric-card p,
 .fact-card p,
 .section-description {
     font-size: 1.6rem;
@@ -432,112 +417,6 @@ ul {
     color: var(--muted-text);
 }
 
-.hero-highlights {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.8rem;
-    width: 100%;
-    max-width: 108rem;
-    margin: 0 auto;
-}
-
-.hero-showcase {
-    grid-column: 1 / -1;
-    position: relative;
-    width: 100%;
-    display: grid;
-    justify-items: center;
-    gap: 2rem;
-    margin-top: 0.8rem;
-    padding: clamp(2rem, 3vw, 3rem);
-    border-radius: 3.4rem;
-    background: linear-gradient(180deg, rgba(13, 22, 38, 0.9), rgba(9, 16, 29, 0.84));
-    border: 1px solid rgba(114, 165, 255, 0.14);
-    box-shadow: 0 2.4rem 6rem rgba(0, 0, 0, 0.22);
-    overflow: hidden;
-}
-
-.hero-showcase::before {
-    content: "";
-    position: absolute;
-    inset: auto auto 0 -8rem;
-    width: 24rem;
-    height: 24rem;
-    border-radius: 50%;
-    background: rgba(95, 241, 214, 0.08);
-    filter: blur(2rem);
-    pointer-events: none;
-}
-
-.hero-showcase-head {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    max-width: 108rem;
-    display: grid;
-    gap: 2rem;
-}
-
-.hero-showcase-label {
-    display: inline-flex;
-    width: fit-content;
-    padding: 0.8rem 1.2rem;
-    margin-bottom: 1.4rem;
-    border-radius: 999px;
-    background: rgba(114, 165, 255, 0.12);
-    color: #d8e4ff;
-    font-size: 1.1rem;
-    letter-spacing: 0.12rem;
-    text-transform: uppercase;
-}
-
-.hero-showcase-copy {
-    margin: 0;
-    max-width: 96rem;
-    font-size: 1.6rem;
-    line-height: 1.8;
-    color: var(--muted-text);
-}
-
-.hero-showcase-points {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.hero-showcase-points span {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.95rem 1.2rem;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    color: #d7e4fb;
-    font-size: 1.3rem;
-}
-
-.hero-showcase-points i {
-    font-size: 1.55rem;
-    color: var(--main-color);
-}
-
-.hero-showcase-head h4 {
-    margin: 0;
-    font-size: clamp(2.2rem, 2.2vw, 3rem);
-    line-height: 1.2;
-    color: var(--text-color);
-}
-
-.hero-showcase-head p {
-    margin: 0;
-    max-width: 45rem;
-    font-size: 1.5rem;
-    line-height: 1.75;
-    color: var(--muted-text);
-}
-
-.metric-card,
 .fact-card,
 .services-box,
 .portfolio-box,
@@ -550,42 +429,6 @@ ul {
     box-shadow: var(--shadow-md);
 }
 
-.metric-card {
-    position: relative;
-    border-radius: var(--radius-sm);
-    min-height: 24rem;
-    padding: 2.3rem;
-    overflow: hidden;
-}
-
-.metric-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at top left, rgba(95, 241, 214, 0.16), transparent 55%);
-    opacity: 0.7;
-    z-index: 0;
-    pointer-events: none;
-}
-
-.metric-card > * {
-    position: relative;
-    z-index: 1;
-}
-
-.metric-card-primary {
-    min-height: 0;
-}
-
-.metric-card-secondary {
-    min-height: 0;
-}
-
-.metric-card-tertiary {
-    min-height: 0;
-}
-
-.metric-tag,
 .timeline-label,
 .project-badge,
 .panel-badge {
@@ -602,18 +445,6 @@ ul {
     text-transform: uppercase;
 }
 
-.metric-tag i {
-    font-size: 1.45rem;
-    color: var(--main-color);
-}
-
-.metric-tag span {
-    color: inherit;
-    font-size: inherit;
-    line-height: 1;
-}
-
-.metric-card strong,
 .fact-card h3,
 .services-box h3,
 .project-content h3,
@@ -626,38 +457,11 @@ ul {
     margin: 1.4rem 0 0.9rem;
 }
 
-.metric-card-primary strong {
-    font-size: 2rem;
-    max-width: 12ch;
-}
-
-.metric-card-secondary strong,
-.metric-card-tertiary strong {
-    max-width: 12ch;
-}
-
 .cta-group {
     display: flex;
     flex-wrap: wrap;
     gap: 1.4rem;
     margin-top: 3.2rem;
-}
-
-.hero-actions {
-    display: flex;
-    width: 100%;
-    max-width: 108rem;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.8rem;
-    flex-wrap: wrap;
-    padding-top: 0.4rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.hero-actions .cta-group,
-.hero-actions .social-media {
-    margin-top: 0;
 }
 
 .btn {
@@ -893,8 +697,7 @@ ul {
 .services-box:hover,
 .portfolio-box:hover,
 .contact-card:hover,
-.fact-card:hover,
-.metric-card:hover {
+.fact-card:hover {
     transform: translateY(-0.6rem);
     border-color: rgba(95, 241, 214, 0.32);
     box-shadow: 0 2rem 4.6rem rgba(0, 0, 0, 0.32);
@@ -1149,11 +952,6 @@ ul {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .hero-kicker-row,
-    .hero-showcase-head {
-        align-items: flex-start;
-    }
-
     .hero-glass-top {
         left: -1rem;
     }
@@ -1270,34 +1068,6 @@ ul {
         align-items: flex-start;
     }
 
-    .hero-actions {
-        width: 100%;
-        align-items: flex-start;
-    }
-
-    .hero-highlights {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        max-width: 100%;
-    }
-
-    .metric-card-primary,
-    .metric-card-secondary,
-    .metric-card-tertiary {
-        min-height: 0;
-    }
-
-    .hero-showcase {
-        padding: 2.2rem;
-    }
-
-    .hero-showcase-head {
-        gap: 1.4rem;
-    }
-
-    .hero-showcase-copy {
-        max-width: 100%;
-    }
-
     .home-visual {
         min-height: 0;
         display: grid;
@@ -1331,7 +1101,6 @@ ul {
         display: none;
     }
 
-    .hero-highlights,
     .fact-grid,
     .services-container,
     .portfolio-container {
@@ -1340,27 +1109,6 @@ ul {
 
     .home {
         padding-top: 14rem;
-    }
-
-    .hero-availability {
-        white-space: normal;
-    }
-
-    .hero-highlights {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-showcase-points {
-        flex-direction: column;
-    }
-
-    .hero-actions {
-        width: 100%;
-        align-items: flex-start;
-    }
-
-    .hero-actions .cta-group {
-        width: 100%;
     }
 
     .home-visual {
@@ -1377,7 +1125,6 @@ ul {
     .project-content,
     .services-box,
     .contact-panel,
-    .metric-card,
     .fact-card {
         padding: 2rem;
     }
