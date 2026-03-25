@@ -1,523 +1,367 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta
-            name="description"
-            content="Portfolio de Matheus Koyama com foco em QA manual, automacao de testes, UX/UI e desenvolvimento front-end.">
-        <title>Matheus Koyama | QA, Automacao e UX</title>
+        <title>Meu Portfólio</title>
 
-        <link
-            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-            rel="stylesheet">
+        <!-- box icones-->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
+            rel='stylesheet'>
+
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <div class="scroll-progress" aria-hidden="true"></div>
 
+        <!-- Header -->
         <header class="header">
-            <a href="#home" class="logo">
-                <span class="logo-mark">MK</span>
-                <span class="logo-copy">
-                    <strong>Matheus Koyama</strong>
-                    <small>QA, automacao e UX</small>
-                </span>
-            </a>
+            <a href="#" class="logo">Portfolio</a>
 
-            <div class="header-menu" id="header-menu">
-                <nav class="navbar" aria-label="Navegacao principal">
-                    <a href="#home" class="active">Inicio</a>
-                    <a href="#about">Sobre</a>
-                    <a href="#services">Especialidades</a>
-                    <a href="#portfolio">Projetos</a>
-                    <a href="#contact">Contato</a>
-                </nav>
+            <i class='bx bx-menu' id="menu-icon"></i>
 
-                <div class="header-actions">
-                    <span class="header-status">
-                        <span class="status-dot"></span>
-                        Disponivel para projetos
-                    </span>
-
-                    <a
-                        href="https://www.linkedin.com/in/matheuskoyama/"
-                        target="_blank"
-                        rel="noreferrer"
-                        class="header-cta">
-                        Vamos conversar
-                        <i class="bx bx-up-right-arrow-alt"></i>
-                    </a>
-                </div>
-            </div>
-
-            <button
-                class="menu-toggle"
-                id="menu-icon"
-                type="button"
-                aria-label="Abrir menu"
-                aria-expanded="false"
-                aria-controls="header-menu">
-                <i class="bx bx-menu"></i>
-            </button>
+            <nav class="navbar">
+                <a href="#home" class="active">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contato</a>
+            </nav>
         </header>
 
-        <main>
-            <section class="home" id="home">
-                <div class="hero-orb hero-orb-one"></div>
-                <div class="hero-orb hero-orb-two"></div>
-
-                <div class="home-content">
-                    <div class="hero-kicker-row">
-                        <p class="section-subtitle">Portfolio profissional</p>
-                    </div>
-
-                    <div class="hero-copy">
-                        <div class="hero-copy-main">
-                            <h1>
-                                Construo qualidade, clareza e confianca para
-                                <span class="gradient-text">produtos digitais</span>
-                            </h1>
-                            <h3>
-                                Atuo com
-                                <span class="multiple-text"></span>
-                            </h3>
-                        </div>
-
-                        <div class="social-media hero-social-strip">
-                            <a
-                                href="https://github.com/koyama8"
-                                target="_blank"
-                                rel="noreferrer"
-                                aria-label="GitHub de Matheus Koyama">
-                                <i class="bx bxl-github"></i>
-                            </a>
-                            <a
-                                href="https://www.linkedin.com/in/matheuskoyama/"
-                                target="_blank"
-                                rel="noreferrer"
-                                aria-label="LinkedIn de Matheus Koyama">
-                                <i class="bx bxl-linkedin"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="home-visual">
-                    <div class="hero-frame">
-                        <img
-                            src="imagens/selenium-cinematic-hq.jpg"
-                            alt="Arte cinematografica de Selenium e automacao de testes">
-                    </div>
-
-                    <article class="hero-glass-card hero-glass-top">
-                        <span class="hero-card-label">Foco atual</span>
-                        <strong>Automacao aplicada</strong>
-                        <p>Estudo, prototipo e evoluo cenarios para transformar
-                            qualidade em rotina confiavel.</p>
-                    </article>
-
-                    <article class="hero-glass-card hero-glass-bottom">
-                        <span class="hero-card-label">Diferencial</span>
-                        <strong>Aprendizado continuo</strong>
-                        <p>Estudo constante, olhar critico e compromisso real
-                            com evolucao em cada entrega.</p>
-                    </article>
-                </div>
-
-            </section>
-
-            <section class="about" id="about">
-                <div class="section-heading">
-                    <p class="section-subtitle">Introducao</p>
-                    <h2 class="heading">Como penso qualidade, produto e
-                        experiencia</h2>
-                </div>
-
-                <div class="about-grid">
-                    <div class="about-visual">
-                        <div class="about-image-card">
-                            <img
-                                src="imagens/home_2.png"
-                                alt="Ilustracao de Matheus Koyama">
-                        </div>
-
-                        <div class="stack-list">
-                            <span>Selenium</span>
-                            <span>Cypress</span>
-                            <span>Postman</span>
-                            <span>GitHub Actions</span>
-                            <span>Jenkins</span>
-                            <span>Figma</span>
-                            <span>Angular</span>
-                            <span>Acessibilidade</span>
-                        </div>
-                    </div>
-
-                    <div class="about-copy">
-                        <p>
-                            Atuo com QA manual e automacao de testes para
-                            aplicacoes web e mobile, estruturando estrategias que
-                            reforcam confiabilidade, acessibilidade e estabilidade
-                            de produto.
+        <!-- Home Section  -->
+        <section class="home" id="home">
+            <div class="home-content">
+                <h3>Bem vindo, Eu sou
+                </h3>
+                <h1>Matheus Koyama.</h1>
+                <h3><span class="multiple-text"></span></h3>
+                <p class="whitespace-nowrap">
+                    <p class="whitespace-nowrap">
+                        <p class="whitespace-nowrap">
+                            <p class="whitespace-nowrap">
+                                Apaixonado por tecnologia e guiado pela
+                                curiosidade criativa, atuo com QA manual,
+                                automação de testes e tenho conhecimento em
+                                Angular. Também atuo em projetos de UX Design e
+                                Interface,
+                                conectando performance técnica à experiência do
+                                usuário e à
+                                acessibilidade.
+                            </p>
                         </p>
-                        <p>
-                            Minha experiencia inclui testes exploratorios,
-                            validacao de fluxos criticos, integracao com CI/CD e
-                            construcao de suites automatizadas com foco em
-                            cobertura inteligente e manutencao saudavel.
-                        </p>
-                        <p>
-                            Tambem trago repertorio em UX/UI Design. Isso me
-                            ajuda a olhar para cada entrega nao apenas pelo lado
-                            tecnico, mas tambem pelo impacto visual, pela
-                            clareza da interface e pela experiencia final do
-                            usuario.
-                        </p>
+                    </p>
+                </p>
+                <div class="social-media">
+                    <a href="https://github.com/koyama8" target="_blank">
+                        <i class='bx bxl-github'></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/matheuskoyama/"
+                        target="_blank">
+                        <i class="bx bxl-linkedin"></i>
+                    </a>
+                </div>
+                <!--      <a href="https://drive.google.com/uc?export=download&id=1AQi2WWWxTmxUd04vsNP6mOEntVI5M9Iy" download class="btn">
+                    Perfil profissional Front-end
+                </a>
+                <a href="https://drive.google.com/uc?export=download&id=1OJ_VscKzMfMAKQh5DZES6Ova1XXFBNwn" class="btn">
+                    Perfil profissional UX-UI Design
+                </a> -->
 
-                        <div class="fact-grid">
-                            <article class="fact-card">
-                                <h3>QA manual</h3>
-                                <p>Mapeamento de risco, validacao funcional e
-                                    cobertura de jornadas reais.</p>
-                            </article>
-                            <article class="fact-card">
-                                <h3>Automacao</h3>
-                                <p>Scripts robustos, regressao continua e suporte
-                                    a pipelines mais confiaveis.</p>
-                            </article>
-                            <article class="fact-card">
-                                <h3>UX/UI</h3>
-                                <p>Mais clareza visual, usabilidade e
-                                    acessibilidade em cada interface.</p>
-                            </article>
-                        </div>
+            </div>
+
+            <div class="home-img">
+                <img src alt>
+            </div>
+        </section>
+
+        <!-- About section  -->
+        <section class="about" id="about">
+            <div class="about-img">
+                <img src="imagens/home_2.png" alt>
+            </div>
+
+            <div class="about-content">
+                <h2 class="heading">About <span>Me</span></h2>
+                <h3>Front Developer</h3>
+                <p>
+                    Sou um <strong>profissional de QA Manual e
+                        Automação</strong>,
+                    com ampla experiência na implementação de estratégias de
+                    testes para aplicações web e mobile.Trabalho de forma
+                    contínua para <strong>
+                        garantir a qualidade</strong>, a
+                    <strong>acessibilidade</strong> e a
+                    <strong>inclusão</strong> em cada etapa do desenvolvimento,
+                    aplicando <strong>
+                        metodologias ágeis</strong> (Scrum e Kanban) e alinhando
+                    práticas de
+                    <strong>User Experience (UX)</strong> a testes eficientes.
+                    <br> <br>
+                    Para <strong>testes automatizados</strong>, utilizo
+                    ferramentas e tecnologias como <strong>
+                        Selenium WebDriver</strong>, <strong>Cypress</strong>,
+                    <strong>Postman</strong> e integrações de
+                    <strong>CI/CD</strong> (por exemplo, Jenkins, GitHub
+                    Actions), criando <strong>scripts robustos
+                    </strong> que cobrem cenários críticos e mantêm a
+                    estabilidade do produto. Minha abordagem combina
+                    <strong>testes manuais</strong> aprofundados com a
+                    automação, sempre em sinergia para reforçar a
+                    <strong>robustez</strong> e a <strong>segurança</strong> das
+                    aplicações.
+                    <br> <br>
+                    Atuei em projetos de <strong>UX e UI Design</strong>,
+                    desenvolvendo interfaces funcionais e intuitivas com foco em
+                    <strong>usabilidade, desempenho e clareza visual</strong>.
+                    Utilizei <strong>Figma</strong>, <strong>Adobe XD</strong> e
+                    <strong>Sketch</strong> para criar protótipos e validar
+                    soluções com base em dados e testes de usabilidade, sempre
+                    alinhando <strong>estética e eficiência</strong> para
+                    oferecer experiências consistentes.
+                    <br> <br>
+
+                    Acredito em uma cultura de <strong>aprendizado
+                        contínuo</strong>, na qual feedbacks são
+                    valorizados e a colaboração é essencial para produzir
+                    resultados excepcionais.
+                    Minha meta é <strong>elevar o nível de qualidade</strong> em
+                    cada produto, garantindo que
+                    ele atenda tanto às necessidades do negócio quanto às
+                    expectativas de seus usuários finais.
+
+                </p>
+                <a href="https://www.linkedin.com/in/matheuskoyama/"
+                    target="_blank"
+                    class="btn">Read More</a>
+            </div>
+        </section>
+
+        <!-- Services section -->
+        <section class="services" id="services">
+            <h2 class="heading">My <span>projects</span></h2>
+
+            <div class="services-container">
+                <div class="services-box">
+                    <i class="bx bx-code-alt"></i>
+                    <h3>Programming </h3>
+                    <p>
+
+                        Automação de testes com foco em eficiência, cobertura e
+                        qualidade contínua.
+                        Experiência no desenvolvimento de suítes robustas para
+                        aplicações web, validando
+                        fluxos críticos em múltiplos dispositivos e navegadores.
+                        Garantia de entregas estáveis,
+                        ágeis e com alto padrão de confiabilidade.
+                    </p>
+                    <!-- 
+                    <a href="javascript:void(0);"
+                        class="btn">Read More</a>
+                      -->
+                </div>
+
+                <div class="services-box">
+                    <i class='bx bxs-user-rectangle'></i>
+                    <h3> Profile</h3>
+                    <p>
+                        Criação de experiências de usuário focadas em
+                        usabilidade e design centrado no usuário, utilizando
+                        práticas de UX/UI. Aplicação de testes de usabilidade,
+                        design de wireframes e prototipação com ferramentas como
+                        Figma e Adobe XD, sempre garantindo acessibilidade e
+                        padrões web.
+
+                    </p>
+                    <!-- 
+                    <a href="javascript:void(0);"
+                        class="btn">Read More</a>
+                      -->
+                </div>
+
+                <div class="services-box">
+                    <i class="bx bxs-paint"></i>
+                    <h3>Graphic Design</h3>
+                    <p> Desenvolvimento de identidades visuais e design de
+                        interfaces gráficas, aplicando os princípios de design
+                        visual para criar layouts atraentes e funcionais.
+                        Utilização de ferramentas como Adobe Illustrator,
+                        Photoshop e Figma para garantir que cada detalhe do
+                        design comunique a mensagem e o valor do produto.
+
+                    </p>
+                    <!-- 
+                    <a href="javascript:void(0);"
+                        class="btn">Read More</a>
+                      -->
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Services section design -->
+        <section class="portfolio" id="portfolio">
+
+            <h2 class="heading">Latest <span>Project</span> </h2>
+
+            <div class="portfolio-container">
+                <div class="portfolio-box">
+                    <img src="imagens/VistaVault.png" alt>
+                    <div class="portfolio-layer">
+                        <h4>VistaVault</h4>
+                        <p>
+                            O Projeto VistaVault é uma plataforma social
+                            intuitiva, que permite aos usuários compartilhar
+                            experiências e momentos especiais com seus amigos,
+                            de forma semelhante ao Instagram, mas com foco em
+                            privacidade e controle.
+                        </p>
+                        <a href="https://github.com/koyama8/Moments"
+                            target="_blank"><i
+                                class="bx bx-link-external"></i></a>
                     </div>
                 </div>
-            </section>
 
-            <section class="services" id="services">
-                <div class="section-heading">
-                    <p class="section-subtitle">Especialidades principais</p>
-                    <h2 class="heading">Onde eu gero impacto de forma mais
-                        forte</h2>
-                </div>
+                <div class="portfolio-box">
+                    <img src="imagens/agenda.png" alt>
+                    <div class="portfolio-layer">
+                        <h4>Agendadify</h4>
+                        <p>O projeto Agendadify é uma agenda digital que permite
+                            a
+                            gestão completa de contatos por meio de um CRUD. Os
+                            usuários podem adicionar, editar e excluir contatos,
+                            incluindo informações gerais, descrições e imagens,
+                            através de um formulário com validações.
 
-                <div class="services-container">
-                    <article class="services-box">
-                        <i class="bx bx-check-shield"></i>
-                        <h3>Estrategia de testes</h3>
-                        <p>Estruturo cenarios, prioridades e criterios de aceite
-                            para reduzir risco antes da entrega.</p>
-                        <ul>
-                            <li>Analise funcional</li>
-                            <li>Validacao de fluxos criticos</li>
-                            <li>Qualidade orientada por negocio</li>
-                        </ul>
-                    </article>
-
-                    <article class="services-box">
-                        <i class="bx bx-code-block"></i>
-                        <h3>Automacao confiavel</h3>
-                        <p>Crio suites pensadas para repetibilidade, manutencao
-                            continua e ganho real de produtividade.</p>
-                        <ul>
-                            <li>Testes web e API</li>
-                            <li>Integracao com CI/CD</li>
-                            <li>Monitoramento de regressao</li>
-                        </ul>
-                    </article>
-
-                    <article class="services-box">
-                        <i class="bx bx-layout"></i>
-                        <h3>UX e interface</h3>
-                        <p>Uno clareza, acessibilidade e design funcional para
-                            tornar a experiencia mais objetiva.</p>
-                        <ul>
-                            <li>Wireframes e prototipos</li>
-                            <li>Usabilidade e acessibilidade</li>
-                            <li>Consistencia visual</li>
-                        </ul>
-                    </article>
-                </div>
-
-                <div class="journey">
-                    <div class="journey-copy">
-                        <p class="section-subtitle">Forma de atuar</p>
-                        <h3>Uma jornada inspirada na forma como equipes maduras
-                            constroem produto.</h3>
-                        <p>
-                            Trouxe para o seu portfolio a ideia de narrativa por
-                            blocos do projeto de referencia: menos lista solta e
-                            mais historia de evolucao, valor e especialidade.
                         </p>
-                    </div>
-
-                    <div class="journey-timeline">
-                        <article class="timeline-item">
-                            <span class="timeline-marker"></span>
-                            <div class="timeline-content">
-                                <span class="timeline-label">Descoberta</span>
-                                <h4>Entender produto, risco e experiencia</h4>
-                                <p>Investigo requisitos, pontos sensiveis,
-                                    acessibilidade e impacto no usuario antes de
-                                    automatizar ou validar em escala.</p>
-                            </div>
-                        </article>
-
-                        <article class="timeline-item">
-                            <span class="timeline-marker"></span>
-                            <div class="timeline-content">
-                                <span class="timeline-label">Execucao</span>
-                                <h4>Testar com profundidade e visao sistemica</h4>
-                                <p>Combino testes manuais, automacao, revisao de
-                                    interface e validacao de fluxo para proteger o
-                                    produto de ponta a ponta.</p>
-                            </div>
-                        </article>
-
-                        <article class="timeline-item">
-                            <span class="timeline-marker"></span>
-                            <div class="timeline-content">
-                                <span class="timeline-label">Evolucao</span>
-                                <h4>Refinar e escalar com mais seguranca</h4>
-                                <p>Transformo aprendizados em melhoria continua,
-                                    documentacao mais clara e entregas mais
-                                    consistentes para o time.</p>
-                            </div>
-                        </article>
+                        <a href="https://github.com/koyama8/Indexa"
+                            target="_blank"><i
+                                class="bx bx-link-external"></i></a>
                     </div>
                 </div>
-            </section>
 
-            <section class="portfolio" id="portfolio">
-                <div class="section-heading">
-                    <p class="section-subtitle">Projetos selecionados</p>
-                    <h2 class="heading">Casos recentes que mostram minha
-                        forma de pensar</h2>
-                </div>
-
-                <div class="portfolio-container">
-                    <article class="portfolio-box">
-                        <div class="project-media">
-                            <img
-                                src="imagens/VistaVault.png"
-                                alt="Preview do projeto VistaVault"
-                                loading="lazy">
-                            <span class="project-badge">Projeto web</span>
-                        </div>
-                        <div class="project-content">
-                            <h3>VistaVault</h3>
-                            <p>
-                                Plataforma social com foco em compartilhamento de
-                                experiencias, privacidade e controle sobre o
-                                conteudo publicado.
-                            </p>
-                            <div class="project-tags">
-                                <span>Social</span>
-                                <span>UX</span>
-                                <span>Privacidade</span>
-                            </div>
-                            <div class="project-actions">
-                                <a
-                                    href="https://github.com/koyama8/Moments"
-                                    target="_blank"
-                                    rel="noreferrer">Ver repositorio</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="portfolio-box">
-                        <div class="project-media">
-                            <img
-                                src="imagens/agenda.png"
-                                alt="Preview do projeto Agendadify"
-                                loading="lazy">
-                            <span class="project-badge">CRUD</span>
-                        </div>
-                        <div class="project-content">
-                            <h3>Agendadify</h3>
-                            <p>
-                                Agenda digital com gestao de contatos, validacao
-                                de formulario e operacoes completas de cadastro,
-                                edicao e remocao.
-                            </p>
-                            <div class="project-tags">
-                                <span>CRUD</span>
-                                <span>Formularios</span>
-                                <span>Validacao</span>
-                            </div>
-                            <div class="project-actions">
-                                <a
-                                    href="https://github.com/koyama8/Indexa"
-                                    target="_blank"
-                                    rel="noreferrer">Ver repositorio</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="portfolio-box">
-                        <div class="project-media">
-                            <img
-                                src="imagens/perfil_blog.png"
-                                alt="Preview do projeto Adenium Aesthetics"
-                                loading="lazy">
-                            <span class="project-badge">Landing page</span>
-                        </div>
-                        <div class="project-content">
-                            <h3>Adenium Aesthetics</h3>
-                            <p>
-                                Projeto responsivo com foco em narrativa visual,
-                                apresentacao de especies exoticas e composicao de
-                                marca.
-                            </p>
-                            <div class="project-tags">
-                                <span>Responsivo</span>
-                                <span>Branding</span>
-                                <span>Conteudo</span>
-                            </div>
-                            <div class="project-actions">
-                                <a
-                                    href="https://koyama8.github.io/Adenium-Aesthetics/"
-                                    target="_blank"
-                                    rel="noreferrer">Abrir projeto</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="portfolio-box">
-                        <div class="project-media">
-                            <img
-                                src="imagens/design.jpg"
-                                alt="Preview do projeto Mordida Express"
-                                loading="lazy">
-                            <span class="project-badge">UX/UI</span>
-                        </div>
-                        <div class="project-content">
-                            <h3>Mordida Express</h3>
-                            <p>
-                                Projeto de UX Design para um app de lanches com
-                                prototipagem responsiva e biblioteca visual ampla
-                                para jornadas mais fluidas.
-                            </p>
-                            <div class="project-tags">
-                                <span>UX research</span>
-                                <span>Prototipo</span>
-                                <span>App</span>
-                            </div>
-                            <div class="project-actions">
-                                <a
-                                    href="https://rebrand.ly/Mordida-Express-Food"
-                                    target="_blank"
-                                    rel="noreferrer">Ver estudo</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="portfolio-box">
-                        <div class="project-media">
-                            <img
-                                src="imagens/Gooday.png"
-                                alt="Preview do projeto Gooday"
-                                loading="lazy">
-                            <span class="project-badge">Figma</span>
-                        </div>
-                        <div class="project-content">
-                            <h3>Gooday</h3>
-                            <p>
-                                Plataforma digital de bem-estar com foco em uma
-                                jornada mais saudavel, ativa e conectada a
-                                servicos e eventos.
-                            </p>
-                            <div class="project-tags">
-                                <span>UX/UI</span>
-                                <span>Bem-estar</span>
-                                <span>Mobile first</span>
-                            </div>
-                            <div class="project-actions">
-                                <a
-                                    href="https://www.figma.com/proto/6h9yZA0DRuep2QHolsxpQ9/Gooday?node-id=2-2&t=eJJJO9hbSxJhZ07c-1"
-                                    target="_blank"
-                                    rel="noreferrer">Ver prototipo</a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </section>
-
-            <section class="contact" id="contact">
-                <div class="contact-wrapper">
-                    <div class="contact-copy">
-                        <p class="section-subtitle">Contato</p>
-                        <h2 class="heading">Vamos conversar sobre qualidade,
-                            automacao ou experiencia digital.</h2>
+                <div class="portfolio-box">
+                    <img src="./imagens/perfil_blog.png" alt>
+                    <div class="portfolio-layer">
+                        <h4>Adenium Aesthetics
+                        </h4>
                         <p>
-                            Se voce quer fortalecer testes, revisar uma jornada,
-                            melhorar acessibilidade ou tirar uma ideia do papel,
-                            sera um prazer trocar contexto e entender o desafio.
+                            Projeto Responsivo: Explore o fascinante mundo das
+                            rosas do deserto e suas variedades exóticas, com
+                            foco nas espécies únicas da ilha de Socotra,
+                            conhecidas por suas formas esculturais e flores
+                            vibrantes.
+
                         </p>
 
-                        <div class="contact-links">
-                            <a
-                                href="https://www.linkedin.com/in/matheuskoyama/"
-                                target="_blank"
-                                rel="noreferrer"
-                                class="contact-card">
-                                <span>LinkedIn</span>
-                                <strong>/in/matheuskoyama</strong>
-                                <small>Canal principal para networking e
-                                    conversa profissional.</small>
-                            </a>
-
-                            <a
-                                href="https://github.com/koyama8"
-                                target="_blank"
-                                rel="noreferrer"
-                                class="contact-card">
-                                <span>GitHub</span>
-                                <strong>@koyama8</strong>
-                                <small>Revisao de codigo, projetos e
-                                    experimentos.</small>
-                            </a>
-                        </div>
+                        <a href="https://koyama8.github.io/Adenium-Aesthetics/"
+                            target="_blank"><i
+                                class="bx bx-link-external"></i></a>
                     </div>
-
-                    <aside class="contact-panel">
-                        <span class="panel-badge">Como posso contribuir</span>
-                        <h3>Areas onde costumo gerar valor rapido</h3>
-                        <ul>
-                            <li>QA manual estruturado para jornadas criticas</li>
-                            <li>Automacao com foco em confiabilidade</li>
-                            <li>Revisao de usabilidade e acessibilidade</li>
-                            <li>Refino de interfaces e organizacao visual</li>
-                        </ul>
-
-                        <div class="cta-group">
-                            <a
-                                href="https://www.linkedin.com/in/matheuskoyama/"
-                                target="_blank"
-                                rel="noreferrer"
-                                class="btn">Enviar mensagem</a>
-                            <a href="#portfolio" class="btn btn-secondary">Explorar projetos</a>
-                        </div>
-                    </aside>
                 </div>
-            </section>
-        </main>
 
+                <div class="portfolio-box">
+                    <img src="imagens/design.jpg" alt>
+                    <div class="portfolio-layer">
+                        <h4>Mordida Express
+                        </h4>
+                        <p>
+                            O projeto de UX Design para o aplicativo Mordida
+                            Express incluiu prototipagem responsiva e mais de 60
+                            templates de design cuidadosamente desenvolvidos. O
+                            objetivo foi criar uma experiência de usuário fluida
+                            para um aplicativo de lanches.
+
+                        </p>
+
+                        <a href="https://rebrand.ly/Mordida-Express-Food"
+                            target="_blank"><i
+                                class="bx bx-link-external"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-box">
+                    <img
+                        src="imagens/Gooday.png"
+                        alt>
+                    <div class="portfolio-layer">
+                        <h4>Gooday</h4>
+                        <p>Gooday é uma plataforma digital de UX/UI focada em
+                            bem-estar.
+                            Incentiva uma vida saudável e ativa, conectando
+                            pessoas à alimentação
+                            equilibrada, atividades físicas, profissionais de
+                            saúde e eventos que promovem
+                            boa qualidade de vida.
+
+                        </p>
+                        <a
+                            href="https://www.figma.com/proto/6h9yZA0DRuep2QHolsxpQ9/Gooday?node-id=2-2&t=eJJJO9hbSxJhZ07c-1"
+                            target="_blank"><i
+                                class="bx bx-link-external"></i></a>
+                    </div>
+                </div>
+                <!-- 
+
+                <div class="portfolio-box">
+                    <img src="imagens/portfolio5.jpg" alt>
+                    <div class="portfolio-layer">
+                        <h4>Web Design</h4>
+                        <p>Lorem ipsun sit amet consectur adipiscing elit.
+
+                        </p>
+                        <a href="javascript:void(0);"><i
+                                class="bx bx-link-external"></i></a>
+                    </div>
+                </div>
+
+                <div class="portfolio-box">
+                    <img src="imagens/portfolio6.jpg" alt>
+                    <div class="portfolio-layer">
+                        <h4>Web Design</h4>
+                        <p>Lorem ipsun sit amet consectur adipiscing elit.
+
+                        </p>
+                        <a href="javascript:void(0);"><i
+                                class="bx bx-link-external"></i></a>
+                    </div>
+                </div>
+           -->
+            </div>
+
+        </section>
+
+        <!-- contact section design -->
+        <section class="contact" id="contact">
+            <h2 class="heading">Contact <span>Me!</span></h2>
+
+            <form action="#">
+
+                <textarea name id cols="30" rows="10"
+                    placeholder="Para obter mais informações, por favor, entre em contato diretamente comigo através do WhatsApp clicando no botão abaixo. Estou à disposição para responder qualquer dúvida ou fornecer assistência adicional que você possa necessitar."></textarea>
+                <input type="button" value="Send Message" class="btn"
+                    onclick="window.location.href=''">
+
+            </form>
+
+        </section>
+
+        <!-- footer  -->
         <footer class="footer">
             <div class="footer-text">
-                <p>Copyright © 2026 by Koyama | All Rights Reserved.</p>
+                <p>Copyright &copy; 2024 by Koyama | All Rights Reserved.</p>
             </div>
 
             <div class="footer-iconTop">
-                <a href="#home">voltar ao topo <i class="bx bx-chevron-up"></i></a>
+                <a href="#home">voltar para o topo <i
+                        class='bx bx-chevron-up'></i> </a>
             </div>
         </footer>
 
         <script src="https://unpkg.com/scrollreveal"></script>
-        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+        <script
+            src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
         <script src="js/script.js"></script>
     </body>
 </html>

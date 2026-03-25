@@ -1,138 +1,68 @@
-const menuToggle = document.querySelector("#menu-icon");
-const headerMenu = document.querySelector("#header-menu");
-const navbar = document.querySelector(".navbar");
-const navIcon = menuToggle ? menuToggle.querySelector("i") : null;
-const sections = document.querySelectorAll("section[id]");
-const navLinks = document.querySelectorAll("header nav a");
-const header = document.querySelector(".header");
-const scrollProgress = document.querySelector(".scroll-progress");
+/*  navbar */
+let menuIcon = document.querySelector("#menu-icon");
+let navbar = document.querySelector(".navbar");
 
-const setMenuState = (isOpen) => {
-  if (!menuToggle || !headerMenu || !navIcon) {
-    return;
-  }
-
-  headerMenu.classList.toggle("active", isOpen);
-  navIcon.classList.toggle("bx-x", isOpen);
-  navIcon.classList.toggle("bx-menu", !isOpen);
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
+menuIcon.onclick = () => {
+  menuIcon.classList.toggle("bx-x");
+  navbar.classList.toggle("active");
 };
 
-const closeMenu = () => {
-  setMenuState(false);
-};
+let sections = document.querySelectorAll("secton");
+let navLinks = document.querySelectorAll("header nav a");
 
-if (menuToggle && headerMenu && navbar && navIcon) {
-  menuToggle.addEventListener("click", (event) => {
-    event.stopPropagation();
-    const isOpen = !headerMenu.classList.contains("active");
-    setMenuState(isOpen);
-  });
+window.onscroll = () => {
+  sections.forEach((sec) => {
+    let top = window.scrollY;
+    let offset = sec.offsetTop - 150;
+    let height = sec.offsetHeight;
+    let id = sec.getAttribute("id");
 
-  navLinks.forEach((link) => {
-    link.addEventListener("click", closeMenu);
-  });
-
-  headerMenu.addEventListener("click", (event) => {
-    event.stopPropagation();
-  });
-
-  document.addEventListener("click", closeMenu);
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      closeMenu();
+    if (top >= offset && top < offset + height) {
+      navLinks.forEach((links) => {
+        links.classList.remove("active");
+        document
+          .querySelector("header nav a[href*=" + id + "]")
+          .classList.add("active");
+      });
     }
   });
-}
 
-const updateActiveSection = () => {
-  const scrollPosition = window.scrollY + 180;
+  let header = document.querySelector("header");
 
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.offsetHeight;
-    const sectionId = section.getAttribute("id");
+  /* navbar */
+  header.classList.toggle("sticky", window.scrollY > 100);
 
-    if (
-      scrollPosition >= sectionTop &&
-      scrollPosition < sectionTop + sectionHeight
-    ) {
-      navLinks.forEach((link) => link.classList.remove("active"));
-
-      const activeLink = document.querySelector(
-        `.navbar a[href="#${sectionId}"]`
-      );
-
-      if (activeLink) {
-        activeLink.classList.add("active");
-      }
-    }
-  });
+  /* Desativar  */
+  menuIcon.classList.remove("bx-x");
+  navbar.classList.remove("active");
 };
 
-const updateScrollProgress = () => {
-  if (!scrollProgress) {
-    return;
-  }
-
-  const scrollableHeight =
-    document.documentElement.scrollHeight - window.innerHeight;
-  const progress =
-    scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * 100 : 0;
-
-  scrollProgress.style.width = `${progress}%`;
-};
-
-const handleScroll = () => {
-  if (header) {
-    header.classList.toggle("sticky", window.scrollY > 80);
-  }
-
-  updateActiveSection();
-  updateScrollProgress();
-  closeMenu();
-};
-
-window.addEventListener("scroll", handleScroll);
-window.addEventListener("load", () => {
-  handleScroll();
+/*   */
+ScrollReveal({ 
+    //reset: true,
+    distance: '80px',
+    duration:2000,
+    delay:200
 });
 
-if (window.ScrollReveal) {
-  const sr = ScrollReveal({
-    distance: "70px",
-    duration: 1400,
-    delay: 120,
-    easing: "cubic-bezier(0.2, 0.8, 0.2, 1)",
-    reset: false,
-  });
+ScrollReveal().reveal('.home-content, .heading', {origin: 'top' });
 
-  sr.reveal(".home-content, .section-heading, .contact-copy", {
-    origin: "top",
-  });
-  sr.reveal(".home-visual, .about-visual, .contact-panel", {
-    origin: "right",
-  });
-  sr.reveal(".about-copy, .journey-copy, .journey-timeline", {
-    origin: "left",
-  });
-  sr.reveal(".metric-card, .fact-card, .services-box, .portfolio-box, .contact-card", {
-    origin: "bottom",
-    interval: 120,
-  });
-}
+ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', 
+{origin: 'top' });
 
-if (window.Typed) {
-  new Typed(".multiple-text", {
-    strings: [
-      "QA manual",
-      "automacao de testes",
-      "UX/UI Design",
-      "qualidade digital",
-    ],
-    typeSpeed: 70,
-    backSpeed: 45,
-    backDelay: 1300,
-    loop: true,
-  });
-}
+ScrollReveal().reveal('.home-content h1, .about-img', 
+{origin: 'left' });
+
+ScrollReveal().reveal('.home-content h1, .about-img', 
+{origin: 'right' });
+
+/* */
+const typed = new Typed('.multiple-text',{
+   
+    strings:['Automação', 'UX/UI Design'],
+    typeSpeed:100,
+    backSpeed:100,
+    backDelay:100,
+    loop:true
+});
+    
