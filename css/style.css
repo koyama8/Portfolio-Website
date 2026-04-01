@@ -36,28 +36,28 @@ section {
 
 .header {
     position: fixed;
-    top: 1.4rem;
+    top: 1.2rem;
     left: 50%;
-    width: min(118rem, calc(100% - 2.8rem));
-    padding: 1.45rem 1.8rem 1.45rem 2.15rem;
+    width: min(116rem, calc(100% - 2.6rem));
+    padding: 1.16rem 1.55rem 1.16rem 1.9rem;
     background:
-        linear-gradient(140deg, rgba(255, 255, 255, .12), rgba(255, 255, 255, 0) 30%),
-        radial-gradient(circle at top left, rgba(14, 255, 255, .16), transparent 34%),
-        radial-gradient(circle at bottom right, rgba(22, 224, 143, .16), transparent 32%),
-        linear-gradient(145deg, rgba(18, 22, 30, .94), rgba(37, 44, 56, .9) 48%, rgba(29, 35, 45, .94));
-    border: .1rem solid rgba(255, 255, 255, .1);
-    border-radius: 2.6rem;
+        linear-gradient(180deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, 0) 34%),
+        radial-gradient(circle at 16% 18%, rgba(14, 255, 255, .08), transparent 30%),
+        radial-gradient(circle at 84% 82%, rgba(22, 224, 143, .07), transparent 28%),
+        linear-gradient(145deg, rgba(18, 22, 30, .95), rgba(33, 39, 50, .92) 48%, rgba(27, 33, 43, .95));
+    border: .1rem solid rgba(255, 255, 255, .08);
+    border-radius: 2.35rem;
     box-shadow:
-        0 2.2rem 4.5rem rgba(0, 0, 0, .32),
-        0 1rem 1.8rem rgba(4, 22, 27, .18),
-        inset 0 .12rem 0 rgba(255, 255, 255, .16),
-        inset 0 -.14rem 0 rgba(255, 255, 255, .05);
-    backdrop-filter: blur(2.2rem) saturate(150%);
-    -webkit-backdrop-filter: blur(2.2rem) saturate(150%);
+        0 1.8rem 3.6rem rgba(0, 0, 0, .28),
+        0 .85rem 1.6rem rgba(4, 22, 27, .12),
+        inset 0 .12rem 0 rgba(255, 255, 255, .12),
+        inset 0 -.14rem 0 rgba(255, 255, 255, .04);
+    backdrop-filter: blur(1.7rem) saturate(138%);
+    -webkit-backdrop-filter: blur(1.7rem) saturate(138%);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1.6rem;
+    gap: 1.35rem;
     transform: translateX(-50%) translateZ(0);
     isolation: isolate;
     z-index: 100;
@@ -69,9 +69,9 @@ section {
     inset: .1rem;
     border-radius: inherit;
     background:
-        linear-gradient(180deg, rgba(255, 255, 255, .16), rgba(255, 255, 255, 0) 42%),
-        linear-gradient(135deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, 0) 55%);
-    opacity: .85;
+        linear-gradient(180deg, rgba(255, 255, 255, .14), rgba(255, 255, 255, 0) 40%),
+        linear-gradient(135deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, 0) 54%);
+    opacity: .72;
     pointer-events: none;
     z-index: 0;
 }
@@ -79,50 +79,50 @@ section {
 .header::after {
     content: "";
     position: absolute;
-    left: 8%;
-    right: 8%;
-    bottom: -1.9rem;
-    height: 3.8rem;
+    left: 14%;
+    right: 14%;
+    bottom: -1.35rem;
+    height: 3rem;
     border-radius: 999px;
-    background: linear-gradient(90deg, transparent, rgba(14, 255, 255, .2), rgba(22, 224, 143, .14), transparent);
-    filter: blur(1.6rem);
-    opacity: .85;
+    background: radial-gradient(circle at center, rgba(126, 244, 229, .2) 0%, rgba(14, 255, 255, 0) 72%);
+    filter: blur(1.3rem);
+    opacity: .52;
     pointer-events: none;
     z-index: -1;
-    animation: navAmbientGlow 7s ease-in-out infinite;
+    animation: navAmbientGlow 9s ease-in-out infinite;
 }
 
 .header.sticky {
-    border-color: rgba(14, 255, 255, .2);
+    border-color: rgba(255, 255, 255, .11);
     background:
-        linear-gradient(140deg, rgba(255, 255, 255, .14), rgba(255, 255, 255, 0) 28%),
-        radial-gradient(circle at top left, rgba(14, 255, 255, .18), transparent 34%),
-        radial-gradient(circle at bottom right, rgba(22, 224, 143, .18), transparent 32%),
-        linear-gradient(145deg, rgba(18, 22, 30, .96), rgba(37, 44, 56, .94) 48%, rgba(29, 35, 45, .96));
+        linear-gradient(180deg, rgba(255, 255, 255, .11), rgba(255, 255, 255, 0) 32%),
+        radial-gradient(circle at 18% 18%, rgba(14, 255, 255, .09), transparent 31%),
+        radial-gradient(circle at 84% 82%, rgba(22, 224, 143, .08), transparent 30%),
+        linear-gradient(145deg, rgba(18, 22, 30, .97), rgba(34, 40, 51, .95) 48%, rgba(27, 33, 43, .97));
     box-shadow:
-        0 2.4rem 4.8rem rgba(0, 0, 0, .36),
-        0 .9rem 2.4rem rgba(14, 255, 255, .14),
-        inset 0 .12rem 0 rgba(255, 255, 255, .18);
+        0 2rem 4rem rgba(0, 0, 0, .32),
+        0 .7rem 1.8rem rgba(14, 255, 255, .08),
+        inset 0 .12rem 0 rgba(255, 255, 255, .14);
 }
 
 .logo {
-    font-size: 2.5rem;
-    color: var(--tex-color);
+    font-size: 2.36rem;
+    color: rgba(255, 255, 255, .96);
     font-weight: 700;
     cursor: pointer;
     position: relative;
     z-index: 2;
     display: inline-flex;
     align-items: center;
-    padding: .95rem 1.55rem .95rem 1.2rem;
-    border: .1rem solid rgba(255, 255, 255, .06);
-    border-radius: 1.9rem;
-    background: linear-gradient(135deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .02));
-    letter-spacing: .05em;
-    text-shadow: 0 .45rem 1rem rgba(0, 0, 0, .35);
+    padding: .76rem 1.2rem .76rem .94rem;
+    border: .1rem solid rgba(255, 255, 255, .05);
+    border-radius: 1.55rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .015));
+    letter-spacing: .08em;
+    text-shadow: 0 .28rem .72rem rgba(0, 0, 0, .24);
     box-shadow:
-        inset 0 .12rem 0 rgba(255, 255, 255, .12),
-        0 1rem 2.4rem rgba(0, 0, 0, .16);
+        inset 0 .1rem 0 rgba(255, 255, 255, .08),
+        0 .8rem 1.6rem rgba(0, 0, 0, .12);
     overflow: hidden;
     transition:
         transform .4s ease,
@@ -135,37 +135,37 @@ section {
     content: "";
     position: absolute;
     inset: -.2rem auto -.2rem -30%;
-    width: 42%;
+    width: 36%;
     background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, .26), rgba(255, 255, 255, 0));
     transform: skewX(-24deg);
-    opacity: .65;
+    opacity: .36;
     pointer-events: none;
-    animation: logoSweep 6.8s linear infinite;
+    animation: logoSweep 10s linear infinite;
 }
 
 .logo::after {
     content: "";
     position: absolute;
-    left: 1.2rem;
-    right: 1.2rem;
-    bottom: .55rem;
-    height: .24rem;
+    left: 1rem;
+    right: 1rem;
+    bottom: .48rem;
+    height: .18rem;
     border-radius: 999px;
-    background: linear-gradient(90deg, rgba(14, 255, 255, 0), rgba(14, 255, 255, .76), rgba(22, 224, 143, .76), rgba(14, 255, 255, 0));
-    filter: blur(.25rem);
-    opacity: .9;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(200, 244, 236, .38), rgba(255, 255, 255, 0));
+    filter: blur(.2rem);
+    opacity: .62;
     pointer-events: none;
 }
 
 .logo:hover,
 .logo:focus-visible {
     color: #fff;
-    border-color: rgba(14, 255, 255, .2);
+    border-color: rgba(255, 255, 255, .1);
     box-shadow:
-        inset 0 .12rem 0 rgba(255, 255, 255, .16),
-        0 1.4rem 2.8rem rgba(0, 0, 0, .2),
-        0 .6rem 1.8rem rgba(14, 255, 255, .12);
-    transform: translateY(-.2rem);
+        inset 0 .1rem 0 rgba(255, 255, 255, .12),
+        0 1rem 2rem rgba(0, 0, 0, .16),
+        0 .45rem 1rem rgba(14, 255, 255, .05);
+    transform: translateY(-.12rem);
 }
 
 .navbar {
@@ -173,18 +173,18 @@ section {
     z-index: 2;
     display: flex;
     align-items: center;
-    gap: .65rem;
+    gap: .58rem;
     margin-left: auto;
-    padding: .75rem;
-    border: .1rem solid rgba(255, 255, 255, .09);
+    padding: .62rem;
+    border: .1rem solid rgba(255, 255, 255, .07);
     border-radius: 999px;
     background:
-        linear-gradient(180deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .02)),
-        linear-gradient(135deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .02));
+        linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .015)),
+        linear-gradient(135deg, rgba(255, 255, 255, .03), rgba(255, 255, 255, .012));
     box-shadow:
-        inset 0 .12rem 0 rgba(255, 255, 255, .14),
-        inset 0 -.14rem 0 rgba(255, 255, 255, .04),
-        0 1.2rem 2.6rem rgba(0, 0, 0, .18);
+        inset 0 .1rem 0 rgba(255, 255, 255, .1),
+        inset 0 -.12rem 0 rgba(255, 255, 255, .03),
+        0 1rem 2rem rgba(0, 0, 0, .14);
     overflow: hidden;
     transform-style: preserve-3d;
 }
@@ -195,23 +195,23 @@ section {
     inset: .1rem;
     border-radius: inherit;
     background:
-        linear-gradient(180deg, rgba(255, 255, 255, .12), rgba(255, 255, 255, 0) 34%),
-        linear-gradient(90deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, 0));
+        linear-gradient(180deg, rgba(255, 255, 255, .09), rgba(255, 255, 255, 0) 34%),
+        linear-gradient(90deg, rgba(255, 255, 255, .03), rgba(255, 255, 255, 0));
     pointer-events: none;
 }
 
 .navbar::after {
     content: "";
     position: absolute;
-    top: -170%;
-    left: -16%;
-    width: 26%;
-    height: 420%;
+    top: -150%;
+    left: -10%;
+    width: 22%;
+    height: 360%;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, .22), rgba(255, 255, 255, 0));
     transform: rotate(24deg);
-    opacity: .55;
+    opacity: .28;
     pointer-events: none;
-    animation: navSheen 9s linear infinite;
+    animation: navSheen 12s linear infinite;
 }
 
 .navbar a {
@@ -220,21 +220,21 @@ section {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    min-height: 4.6rem;
-    padding: 1.12rem 1.85rem;
-    font-size: 1.48rem;
-    font-weight: 600;
-    color: rgba(255, 255, 255, .88);
+    min-height: 4.3rem;
+    padding: .98rem 1.72rem;
+    font-size: 1.44rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, .78);
     margin-left: 0;
     border: .1rem solid transparent;
     border-radius: 999px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, .03), rgba(255, 255, 255, .015));
-    letter-spacing: .04em;
-    text-shadow: 0 .2rem .8rem rgba(0, 0, 0, .32);
+    background: linear-gradient(180deg, rgba(255, 255, 255, .025), rgba(255, 255, 255, .01));
+    letter-spacing: .03em;
+    text-shadow: 0 .18rem .6rem rgba(0, 0, 0, .28);
     box-shadow:
-        inset 0 -.6rem .9rem rgba(0, 0, 0, .08),
-        inset 0 .1rem 0 rgba(255, 255, 255, .04);
-    transform: translateY(0) rotateX(0deg);
+        inset 0 -.45rem .75rem rgba(0, 0, 0, .05),
+        inset 0 .1rem 0 rgba(255, 255, 255, .03);
+    transform: translateY(0);
     backface-visibility: hidden;
     transition:
         transform .35s ease,
@@ -250,7 +250,7 @@ section {
     position: absolute;
     inset: .1rem;
     border-radius: inherit;
-    background: linear-gradient(180deg, rgba(255, 255, 255, .26), rgba(255, 255, 255, 0) 48%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, .18), rgba(255, 255, 255, 0) 48%);
     opacity: 0;
     transition: opacity .3s ease;
     pointer-events: none;
@@ -261,13 +261,13 @@ section {
     position: absolute;
     left: 18%;
     right: 18%;
-    bottom: .62rem;
-    height: .28rem;
+    bottom: .58rem;
+    height: .22rem;
     border-radius: 999px;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, .92), rgba(255, 255, 255, 0));
-    filter: blur(.45rem);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(245, 255, 253, .9), rgba(255, 255, 255, 0));
+    filter: blur(.36rem);
     opacity: 0;
-    transform: scaleX(.55);
+    transform: scaleX(.62);
     transition:
         opacity .35s ease,
         transform .35s ease;
@@ -275,66 +275,81 @@ section {
 }
 
 .navbar a:hover,
-.navbar a.active,
 .navbar a:focus-visible {
-    color: #04161b;
-    border-color: rgba(255, 255, 255, .26);
+    color: rgba(255, 255, 255, .96);
+    border-color: rgba(255, 255, 255, .1);
     background:
-        linear-gradient(180deg, rgba(255, 255, 255, .22), rgba(255, 255, 255, 0) 42%),
-        linear-gradient(135deg, rgba(14, 255, 255, .98), rgba(22, 224, 143, .92) 60%, rgba(173, 255, 236, .9));
+        linear-gradient(180deg, rgba(255, 255, 255, .09), rgba(255, 255, 255, 0) 42%),
+        linear-gradient(135deg, rgba(255, 255, 255, .045), rgba(255, 255, 255, .015));
     box-shadow:
-        0 1.2rem 2.2rem rgba(14, 255, 255, .18),
-        0 .7rem 1.4rem rgba(0, 0, 0, .22),
-        inset 0 .12rem 0 rgba(255, 255, 255, .4),
-        inset 0 -.5rem .9rem rgba(4, 22, 27, .12);
-    text-shadow: none;
-    transform: translateY(-.34rem) rotateX(8deg);
+        0 .85rem 1.5rem rgba(0, 0, 0, .14),
+        inset 0 .1rem 0 rgba(255, 255, 255, .12),
+        inset 0 -.55rem .95rem rgba(0, 0, 0, .06);
+    transform: translateY(-.12rem);
 }
 
 .navbar a:hover::before,
-.navbar a.active::before,
 .navbar a:focus-visible::before {
-    opacity: 1;
+    opacity: .42;
 }
 
 .navbar a:hover::after,
-.navbar a.active::after,
 .navbar a:focus-visible::after {
-    opacity: 1;
-    transform: scaleX(1);
+    opacity: .34;
+    transform: scaleX(.74);
 }
 
 .navbar a.active {
-    animation: navLinkPulse 3.6s ease-in-out infinite;
+    color: #062026;
+    border-color: rgba(214, 255, 246, .46);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, .28), rgba(255, 255, 255, 0) 38%),
+        linear-gradient(140deg, rgba(208, 255, 241, .98), rgba(115, 241, 220, .96) 38%, rgba(47, 205, 189, .95) 72%, rgba(24, 171, 168, .94));
+    box-shadow:
+        0 .95rem 1.7rem rgba(33, 203, 188, .18),
+        0 .5rem 1rem rgba(0, 0, 0, .18),
+        inset 0 .12rem 0 rgba(255, 255, 255, .44),
+        inset 0 -.65rem 1rem rgba(6, 34, 37, .14);
+    text-shadow: none;
+    transform: translateY(-.18rem);
+    animation: navLinkPulse 6.2s ease-in-out infinite;
+}
+
+.navbar a.active::before {
+    opacity: 1;
+}
+
+.navbar a.active::after {
+    opacity: .82;
+    transform: scaleX(.9);
 }
 
 .navbar a:focus-visible {
     box-shadow:
-        0 0 0 .25rem rgba(14, 255, 255, .16),
-        0 1.2rem 2.2rem rgba(14, 255, 255, .18),
-        0 .7rem 1.4rem rgba(0, 0, 0, .22),
-        inset 0 .12rem 0 rgba(255, 255, 255, .4),
-        inset 0 -.5rem .9rem rgba(4, 22, 27, .12);
+        0 0 0 .24rem rgba(164, 255, 236, .14),
+        0 .85rem 1.5rem rgba(0, 0, 0, .14),
+        inset 0 .1rem 0 rgba(255, 255, 255, .12),
+        inset 0 -.55rem .95rem rgba(0, 0, 0, .06);
 }
 
 #menu-icon {
-    font-size: 3.6rem;
+    font-size: 3.35rem;
     color: var(--tex-color);
     display: none;
     position: relative;
     z-index: 2;
-    width: 5rem;
-    height: 5rem;
-    border: .1rem solid rgba(255, 255, 255, .08);
-    border-radius: 1.6rem;
+    width: 4.85rem;
+    height: 4.85rem;
+    border: .1rem solid rgba(255, 255, 255, .07);
+    border-radius: 1.45rem;
     cursor: pointer;
     background:
-        linear-gradient(180deg, rgba(255, 255, 255, .12), rgba(255, 255, 255, .03)),
-        linear-gradient(145deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .03));
+        linear-gradient(180deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .02)),
+        linear-gradient(145deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .02));
     box-shadow:
-        inset 0 .12rem 0 rgba(255, 255, 255, .12),
-        inset 0 -.12rem 0 rgba(255, 255, 255, .04),
-        0 1rem 2rem rgba(0, 0, 0, .2);
+        inset 0 .1rem 0 rgba(255, 255, 255, .1),
+        inset 0 -.12rem 0 rgba(255, 255, 255, .03),
+        0 .9rem 1.8rem rgba(0, 0, 0, .18);
     overflow: hidden;
     transition:
         transform .35s ease,
@@ -349,8 +364,8 @@ section {
     position: absolute;
     inset: .1rem;
     border-radius: inherit;
-    background: linear-gradient(180deg, rgba(255, 255, 255, .22), rgba(255, 255, 255, 0) 44%);
-    opacity: .8;
+    background: linear-gradient(180deg, rgba(255, 255, 255, .18), rgba(255, 255, 255, 0) 42%);
+    opacity: .72;
     pointer-events: none;
 }
 
@@ -359,44 +374,44 @@ section {
     position: absolute;
     left: 26%;
     right: 26%;
-    bottom: .7rem;
-    height: .28rem;
+    bottom: .68rem;
+    height: .22rem;
     border-radius: 999px;
-    background: linear-gradient(90deg, rgba(14, 255, 255, 0), rgba(14, 255, 255, .8), rgba(22, 224, 143, .8), rgba(14, 255, 255, 0));
-    filter: blur(.35rem);
-    opacity: .82;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(229, 255, 249, .74), rgba(255, 255, 255, 0));
+    filter: blur(.3rem);
+    opacity: .62;
     pointer-events: none;
 }
 
 #menu-icon:hover,
 #menu-icon:focus-visible,
 #menu-icon.bx-x {
-    color: #04161b;
-    border-color: rgba(255, 255, 255, .24);
+    color: #072328;
+    border-color: rgba(214, 255, 246, .4);
     background:
-        linear-gradient(180deg, rgba(255, 255, 255, .22), rgba(255, 255, 255, 0) 44%),
-        linear-gradient(135deg, rgba(14, 255, 255, .98), rgba(22, 224, 143, .9) 62%, rgba(173, 255, 236, .88));
+        linear-gradient(180deg, rgba(255, 255, 255, .22), rgba(255, 255, 255, 0) 42%),
+        linear-gradient(140deg, rgba(208, 255, 241, .96), rgba(110, 236, 217, .94) 42%, rgba(36, 196, 185, .93));
     box-shadow:
-        0 1.2rem 2rem rgba(14, 255, 255, .18),
-        0 .7rem 1.4rem rgba(0, 0, 0, .22),
-        inset 0 .12rem 0 rgba(255, 255, 255, .4);
-    transform: translateY(-.24rem) rotate(-2deg);
+        0 .95rem 1.7rem rgba(33, 203, 188, .16),
+        0 .5rem 1rem rgba(0, 0, 0, .18),
+        inset 0 .12rem 0 rgba(255, 255, 255, .42);
+    transform: translateY(-.14rem) rotate(-1deg);
 }
 
 #menu-icon.bx-x {
-    transform: translateY(-.24rem) rotate(-90deg);
+    transform: translateY(-.14rem) rotate(-90deg);
 }
 
 @keyframes navAmbientGlow {
     0%,
     100% {
-        opacity: .72;
-        transform: scaleX(.92);
+        opacity: .34;
+        transform: scaleX(.94);
     }
 
     50% {
-        opacity: 1;
-        transform: scaleX(1.04);
+        opacity: .56;
+        transform: scaleX(1.02);
     }
 }
 
@@ -424,18 +439,18 @@ section {
     0%,
     100% {
         box-shadow:
-            0 1.2rem 2.2rem rgba(14, 255, 255, .16),
-            0 .7rem 1.4rem rgba(0, 0, 0, .2),
-            inset 0 .12rem 0 rgba(255, 255, 255, .38),
-            inset 0 -.5rem .9rem rgba(4, 22, 27, .1);
+            0 .9rem 1.6rem rgba(33, 203, 188, .14),
+            0 .5rem 1rem rgba(0, 0, 0, .16),
+            inset 0 .12rem 0 rgba(255, 255, 255, .42),
+            inset 0 -.65rem 1rem rgba(6, 34, 37, .12);
     }
 
     50% {
         box-shadow:
-            0 1.4rem 2.5rem rgba(14, 255, 255, .24),
-            0 .9rem 1.8rem rgba(0, 0, 0, .24),
-            inset 0 .12rem 0 rgba(255, 255, 255, .44),
-            inset 0 -.5rem .9rem rgba(4, 22, 27, .14);
+            0 1.05rem 1.9rem rgba(33, 203, 188, .2),
+            0 .6rem 1.1rem rgba(0, 0, 0, .18),
+            inset 0 .12rem 0 rgba(255, 255, 255, .46),
+            inset 0 -.65rem 1rem rgba(6, 34, 37, .16);
     }
 }
 
@@ -1230,25 +1245,25 @@ footer-iconTop a i {
     .header {
         top: 1rem;
         width: calc(100% - 1.8rem);
-        padding: 1.25rem 1.45rem 1.25rem 1.7rem;
-        border-radius: 2.2rem;
-        gap: 1.1rem;
+        padding: 1.02rem 1.28rem 1.02rem 1.5rem;
+        border-radius: 2.05rem;
+        gap: 1rem;
     }
 
     .logo {
-        font-size: 2.35rem;
-        padding: .88rem 1.32rem .88rem 1.05rem;
+        font-size: 2.22rem;
+        padding: .7rem 1.08rem .7rem .86rem;
     }
 
     .navbar {
-        gap: .45rem;
-        padding: .58rem;
+        gap: .42rem;
+        padding: .52rem;
     }
 
     .navbar a {
-        min-height: 4.3rem;
-        padding: .98rem 1.45rem;
-        font-size: 1.38rem;
+        min-height: 4.05rem;
+        padding: .92rem 1.38rem;
+        font-size: 1.34rem;
     }
 
     .home-content {
@@ -1277,57 +1292,58 @@ footer-iconTop a i {
 
 @media (max-width: 768px) {
     .header {
-        top: .9rem;
+        top: .85rem;
         width: calc(100% - 1.4rem);
-        padding: 1.05rem 1rem 1.05rem 1.2rem;
-        border-radius: 2.05rem;
-        gap: .9rem;
+        padding: .88rem .92rem .88rem 1.08rem;
+        border-radius: 1.95rem;
+        gap: .82rem;
     }
 
     .header::after {
-        left: 12%;
-        right: 12%;
-        bottom: -1.6rem;
+        left: 16%;
+        right: 16%;
+        bottom: -1.2rem;
+        height: 2.4rem;
     }
 
     .logo {
-        font-size: 2.2rem;
-        padding: .82rem 1.15rem .82rem .95rem;
+        font-size: 2.04rem;
+        padding: .68rem 1rem .68rem .82rem;
     }
 
     #menu-icon {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 4.6rem;
-        height: 4.6rem;
+        width: 4.45rem;
+        height: 4.45rem;
         margin-left: auto;
     }
 
     .navbar {
         position: absolute;
-        top: calc(100% + 1rem);
+        top: calc(100% + .82rem);
         left: 50%;
-        width: min(100%, 35rem);
-        padding: 1.05rem;
+        width: min(100%, 34rem);
+        padding: .88rem;
         background:
-            linear-gradient(180deg, rgba(255, 255, 255, .12), rgba(255, 255, 255, 0) 22%),
-            radial-gradient(circle at top left, rgba(14, 255, 255, .14), transparent 38%),
-            radial-gradient(circle at bottom right, rgba(22, 224, 143, .12), transparent 36%),
-            linear-gradient(145deg, rgba(18, 22, 30, .96), rgba(37, 44, 56, .94));
-        border: .1rem solid rgba(255, 255, 255, .1);
-        border-radius: 2.2rem;
+            linear-gradient(180deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, 0) 22%),
+            radial-gradient(circle at top left, rgba(14, 255, 255, .08), transparent 36%),
+            radial-gradient(circle at bottom right, rgba(22, 224, 143, .06), transparent 34%),
+            linear-gradient(145deg, rgba(18, 22, 30, .97), rgba(33, 39, 50, .95));
+        border: .1rem solid rgba(255, 255, 255, .08);
+        border-radius: 2rem;
         box-shadow:
-            0 2rem 3.6rem rgba(0, 0, 0, .34),
-            0 .8rem 1.8rem rgba(14, 255, 255, .08),
-            inset 0 .12rem 0 rgba(255, 255, 255, .14);
-        backdrop-filter: blur(2rem) saturate(150%);
-        -webkit-backdrop-filter: blur(2rem) saturate(150%);
+            0 1.6rem 3rem rgba(0, 0, 0, .32),
+            0 .6rem 1.4rem rgba(14, 255, 255, .05),
+            inset 0 .1rem 0 rgba(255, 255, 255, .12);
+        backdrop-filter: blur(1.65rem) saturate(138%);
+        -webkit-backdrop-filter: blur(1.65rem) saturate(138%);
         display: block;
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
-        transform: translateX(-50%) translateY(1.4rem) scale(.96);
+        transform: translateX(-50%) translateY(1.1rem) scale(.97);
         transform-origin: top center;
         transition:
             opacity .35s ease,
@@ -1336,12 +1352,12 @@ footer-iconTop a i {
     }
 
     .navbar::after {
-        top: -120%;
-        left: -18%;
-        width: 34%;
-        height: 260%;
-        opacity: .48;
-        animation-duration: 6.8s;
+        top: -112%;
+        left: -12%;
+        width: 26%;
+        height: 240%;
+        opacity: .24;
+        animation-duration: 9.5s;
     }
 
     .navbar.active {
@@ -1354,15 +1370,15 @@ footer-iconTop a i {
     .navbar a {
         display: flex;
         width: 100%;
-        min-height: 5rem;
-        font-size: 1.72rem;
+        min-height: 4.7rem;
+        font-size: 1.66rem;
         margin: 0;
-        padding: 1.28rem 1.45rem;
+        padding: 1.14rem 1.3rem;
         text-align: center;
-        background: linear-gradient(135deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .02));
-        border-color: rgba(255, 255, 255, .04);
+        background: linear-gradient(135deg, rgba(255, 255, 255, .045), rgba(255, 255, 255, .015));
+        border-color: rgba(255, 255, 255, .03);
         box-shadow:
-            inset 0 -.75rem 1rem rgba(0, 0, 0, .1),
+            inset 0 -.65rem .95rem rgba(0, 0, 0, .08),
             inset 0 .1rem 0 rgba(255, 255, 255, .05);
         opacity: 0;
         transform: translateY(1rem) scale(.96);
@@ -1376,7 +1392,7 @@ footer-iconTop a i {
     }
 
     .navbar a + a {
-        margin-top: .75rem;
+        margin-top: .62rem;
     }
 
     .navbar.active a {
@@ -1524,32 +1540,32 @@ footer-iconTop a i {
     .header {
         top: .7rem;
         width: calc(100% - 1rem);
-        padding: .95rem .9rem .95rem 1rem;
-        border-radius: 1.85rem;
+        padding: .8rem .82rem .8rem .92rem;
+        border-radius: 1.72rem;
     }
 
     .logo {
-        font-size: 1.95rem;
-        padding: .74rem .98rem .74rem .82rem;
+        font-size: 1.86rem;
+        padding: .62rem .9rem .62rem .72rem;
     }
 
     #menu-icon {
-        width: 4.35rem;
-        height: 4.35rem;
-        border-radius: 1.4rem;
+        width: 4.15rem;
+        height: 4.15rem;
+        border-radius: 1.26rem;
     }
 
     .navbar {
-        top: calc(100% + .85rem);
+        top: calc(100% + .72rem);
         width: min(100%, 100%);
-        padding: .92rem;
-        border-radius: 1.85rem;
+        padding: .78rem;
+        border-radius: 1.72rem;
     }
 
     .navbar a {
-        min-height: 4.8rem;
-        font-size: 1.64rem;
-        padding: 1.18rem 1.1rem;
+        min-height: 4.5rem;
+        font-size: 1.58rem;
+        padding: 1.04rem 1rem;
     }
 
     .home-content {
