@@ -112,7 +112,7 @@ section {
     cursor: pointer;
     position: relative;
     z-index: 2;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     padding: .76rem 1.2rem .76rem .94rem;
     border: .1rem solid rgba(255, 255, 255, .05);
@@ -216,7 +216,7 @@ section {
 
 .navbar a {
     position: relative;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
@@ -1083,28 +1083,231 @@ span {
 }
 
 .portfolio {
-    background: var(--second-bg-color);
-
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background:
+        radial-gradient(circle at 14% 18%, rgba(14, 255, 255, .14) 0%, rgba(14, 255, 255, 0) 30%),
+        radial-gradient(circle at 86% 80%, rgba(22, 224, 143, .12) 0%, rgba(22, 224, 143, 0) 28%),
+        linear-gradient(180deg, rgba(255, 255, 255, .02), rgba(255, 255, 255, 0) 12%),
+        linear-gradient(180deg, rgba(51, 60, 75, .98) 0%, var(--second-bg-color) 54%, rgba(38, 45, 57, .98) 100%);
 }
 
+.portfolio::before,
+.portfolio::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.portfolio::before {
+    top: 8%;
+    left: -12rem;
+    width: 36rem;
+    height: 36rem;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(14, 255, 255, .18) 0%, rgba(14, 255, 255, 0) 68%);
+    filter: blur(1.6rem);
+    opacity: .88;
+}
+
+.portfolio::after {
+    right: -14rem;
+    bottom: 4%;
+    width: 40rem;
+    height: 40rem;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(22, 224, 143, .14) 0%, rgba(22, 224, 143, 0) 68%);
+    filter: blur(2rem);
+    opacity: .8;
+}
+
+.about-content h2,
+.contact h2,
+.services h2,
 .portfolio h2 {
-    margin-bottom: 4rem;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: baseline;
+    gap: 1.2rem;
+    width: fit-content;
+    margin: 0 auto 4rem;
+    padding: 0 1.8rem 1.3rem;
+    color: #f7fbff;
+    font-weight: 800;
+    letter-spacing: -.04em;
+    line-height: .98;
+    text-shadow:
+        0 .2rem 0 rgba(255, 255, 255, .12),
+        0 .9rem 2rem rgba(0, 0, 0, .22),
+        0 0 2rem rgba(197, 248, 255, .08);
+}
+
+.contact h2,
+.services h2,
+.portfolio h2 {
+    margin: 0 auto 4rem;
+}
+
+.about-content h2 {
+    margin: 0 0 2.4rem;
+    padding: 0 0 1.3rem;
+    text-align: left;
+}
+
+.about-content h2::after,
+.contact h2::after,
+.services h2::after,
+.portfolio h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 8rem;
+    height: .36rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(14, 255, 255, 0), rgba(14, 255, 255, .95), rgba(22, 224, 143, .82), rgba(14, 255, 255, 0));
+    box-shadow: 0 0 1.6rem rgba(14, 255, 255, .32);
+}
+
+.contact h2::after,
+.services h2::after,
+.portfolio h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.about-content h2::after {
+    left: 0;
+    transform: none;
+}
+
+.about-content h2 span,
+.contact h2 span,
+.services h2 span,
+.portfolio h2 span {
+    position: relative;
+    display: inline-block;
+    padding: .03em .18em .12em;
+    background: linear-gradient(90deg, #f2fffd 0%, #c7fff6 18%, #6ff4d5 52%, #45e7ff 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 .55rem 1.6rem rgba(14, 255, 255, .18));
+    isolation: isolate;
+}
+
+.about-content h2 span::before,
+.contact h2 span::before,
+.services h2 span::before,
+.portfolio h2 span::before {
+    content: "";
+    position: absolute;
+    inset: 18% -.14em .02em -.14em;
+    background:
+        radial-gradient(circle at 28% 48%, rgba(69, 231, 255, .18), rgba(69, 231, 255, 0) 42%),
+        radial-gradient(circle at 72% 52%, rgba(111, 244, 213, .18), rgba(111, 244, 213, 0) 44%),
+        linear-gradient(90deg, rgba(32, 203, 255, .1), rgba(18, 228, 158, .12));
+    border-radius: 999px;
+    filter: blur(.9rem);
+    opacity: .78;
+    transform: none;
+    z-index: -1;
+}
+
+.about-content h2 span::after,
+.contact h2 span::after,
+.services h2 span::after,
+.portfolio h2 span::after {
+    content: "";
+    position: absolute;
+    left: 18%;
+    right: 18%;
+    bottom: -.03em;
+    height: .14em;
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(69, 231, 255, 0), rgba(69, 231, 255, .88), rgba(111, 244, 213, .8), rgba(69, 231, 255, 0));
+    filter: blur(.16em);
+    opacity: .82;
+    z-index: -2;
 }
 
 .portfolio-container {
+    position: relative;
+    z-index: 1;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    gap: 2.5rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 2.8rem;
+    perspective: 180rem;
 }
 
 .portfolio-container .portfolio-box {
     position: relative;
     aspect-ratio: 640 / 426;
-    border-radius: 2rem;
-    box-shadow: 0 0 1rem var(--bg-color);
+    border: .1rem solid rgba(255, 255, 255, .08);
+    border-radius: 2.4rem;
+    background: linear-gradient(145deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .015));
+    box-shadow:
+        0 2.2rem 4rem rgba(0, 0, 0, .28),
+        0 1rem 1.8rem rgba(0, 0, 0, .16),
+        inset 0 .1rem 0 rgba(255, 255, 255, .16);
     overflow: hidden;
     display: flex;
+    isolation: isolate;
+    transform-style: preserve-3d;
+    transition:
+        transform .55s cubic-bezier(.22, .61, .36, 1),
+        box-shadow .55s cubic-bezier(.22, .61, .36, 1),
+        border-color .4s ease;
+}
+
+.portfolio-container .portfolio-box::before,
+.portfolio-container .portfolio-box::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+}
+
+.portfolio-container .portfolio-box::before {
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, .14), rgba(255, 255, 255, 0) 26%),
+        linear-gradient(125deg, rgba(14, 255, 255, .12), rgba(14, 255, 255, 0) 38%);
+    opacity: .7;
+    z-index: 1;
+}
+
+.portfolio-container .portfolio-box::after {
+    left: 12%;
+    right: 12%;
+    bottom: -2.1rem;
+    height: 3.6rem;
+    border-radius: 999px;
+    background: radial-gradient(circle at center, rgba(14, 255, 255, .28) 0%, rgba(14, 255, 255, 0) 72%);
+    filter: blur(1.7rem);
+    opacity: .34;
+    transition: opacity .45s ease, transform .45s ease;
+    z-index: 0;
+}
+
+.portfolio-container .portfolio-box:hover {
+    border-color: rgba(14, 255, 255, .24);
+    box-shadow:
+        0 3rem 5.4rem rgba(0, 0, 0, .34),
+        0 1.4rem 2.4rem rgba(14, 255, 255, .12),
+        inset 0 .12rem 0 rgba(255, 255, 255, .2);
+    transform: translateY(-1.1rem) rotateX(7deg) rotateY(-7deg);
+}
+
+.portfolio-container .portfolio-box:nth-child(2n):hover {
+    transform: translateY(-1.1rem) rotateX(7deg) rotateY(7deg);
+}
+
+.portfolio-container .portfolio-box:hover::after {
+    opacity: .66;
+    transform: translateY(.3rem);
 }
 
 .portfolio-box img {
@@ -1113,56 +1316,292 @@ span {
     object-fit: cover;
     object-position: center;
     display: block;
-    transition: .5s ease;
+    filter: saturate(1.04) contrast(1.03) brightness(.96);
+    transform: scale(1.001);
+    transition:
+        transform .8s cubic-bezier(.22, .61, .36, 1),
+        filter .55s ease;
 }
 
 .portfolio-box:hover img {
-    transform: scale(1.1);
+    transform: scale(1.08);
+    filter: brightness(.52) saturate(1.14) contrast(1.08);
 }
 
 .portfolio-box .portfolio-layer {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, .1), var(--main-color));
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(5, 8, 13, .04) 0%, rgba(6, 10, 16, .22) 22%, rgba(8, 15, 22, .72) 58%, rgba(12, 24, 32, .95) 100%),
+        linear-gradient(135deg, rgba(14, 255, 255, .18), rgba(14, 255, 255, 0) 42%),
+        linear-gradient(320deg, rgba(22, 224, 143, .18), rgba(22, 224, 143, 0) 46%);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
+    align-items: flex-start;
     flex-direction: column;
-    text-align: center;
-    padding: 0 4rem;
-    transform: translateY(100%);
-    transition: .5s ease;
+    text-align: left;
+    gap: 1rem;
+    padding: 2.4rem 2.5rem 2.6rem;
+    border-top: .1rem solid rgba(255, 255, 255, .08);
+    backdrop-filter: blur(.9rem) saturate(122%);
+    -webkit-backdrop-filter: blur(.9rem) saturate(122%);
+    opacity: 0;
+    transform: translateY(18%);
+    transition:
+        transform .55s cubic-bezier(.22, .61, .36, 1),
+        opacity .42s ease;
+    z-index: 2;
+}
+
+.portfolio-box .portfolio-layer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(140deg, rgba(255, 255, 255, .12), rgba(255, 255, 255, 0) 28%),
+        linear-gradient(0deg, rgba(255, 255, 255, .03), rgba(255, 255, 255, 0));
+    opacity: .9;
+    pointer-events: none;
 }
 
 .portfolio-box:hover .portfolio-layer {
+    opacity: 1;
     transform: translateY(0);
 }
 
+.portfolio-layer h4,
+.portfolio-layer p,
+.portfolio-layer a {
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(1.2rem) translateZ(4rem);
+    transition:
+        transform .55s cubic-bezier(.22, .61, .36, 1),
+        opacity .35s ease;
+}
+
+.portfolio-box:hover .portfolio-layer h4 {
+    opacity: 1;
+    transform: translateY(0) translateZ(4rem);
+    transition-delay: .05s;
+}
+
+.portfolio-box:hover .portfolio-layer p {
+    opacity: 1;
+    transform: translateY(0) translateZ(4rem);
+    transition-delay: .1s;
+}
+
+.portfolio-box:hover .portfolio-layer a {
+    opacity: 1;
+    transform: translateY(0) translateZ(4rem);
+    transition-delay: .15s;
+}
+
 .portfolio-layer h4 {
-    font-size: 3rem;
+    font-size: 2.7rem;
+    line-height: 1.08;
+    letter-spacing: .03em;
+    text-shadow: 0 .6rem 1.6rem rgba(0, 0, 0, .28);
 }
 
 .portfolio-layer p {
-    font-size: 1.6rem;
-    margin: .3rem 0 1rem;
+    font-size: 1.45rem;
+    line-height: 1.68;
+    margin: 0;
+    color: rgba(255, 255, 255, .84);
 }
 
 .portfolio-layer a {
+    position: relative;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 5rem;
-    height: 5rem;
-    background: var(--tex-color);
-    border-radius: 50%;
+    align-self: flex-start;
+    min-width: 18.8rem;
+    height: 5.3rem;
+    margin-top: .55rem;
+    padding: .6rem 1.6rem;
+    border: .1rem solid rgba(153, 241, 255, .2);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, .12), rgba(255, 255, 255, .03) 54%),
+        linear-gradient(135deg, rgba(7, 17, 25, .92), rgba(14, 28, 37, .96));
+    border-radius: 999px;
+    box-shadow:
+        0 1.2rem 2.8rem rgba(0, 0, 0, .28),
+        0 .45rem 1.2rem rgba(14, 255, 255, .12),
+        inset 0 .1rem 0 rgba(255, 255, 255, .14),
+        inset 0 -.12rem .45rem rgba(5, 11, 17, .28);
+    backdrop-filter: blur(1rem) saturate(145%);
+    -webkit-backdrop-filter: blur(1rem) saturate(145%);
+    overflow: hidden;
+    isolation: isolate;
+    white-space: nowrap;
+    transition:
+        transform .38s ease,
+        box-shadow .38s ease,
+        border-color .38s ease,
+        background .38s ease;
+}
+
+.portfolio-layer a::before,
+.portfolio-layer a::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    transition:
+        opacity .38s ease,
+        transform .38s ease;
+}
+
+.portfolio-layer a::before {
+    inset: .12rem;
+    border-radius: inherit;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, .11), rgba(255, 255, 255, 0) 46%),
+        linear-gradient(135deg, rgba(14, 255, 255, .14), rgba(14, 255, 255, 0) 46%);
+    opacity: .92;
+    z-index: 0;
+}
+
+.portfolio-layer a::after {
+    content: "Ver projeto";
+    position: relative;
+    z-index: 1;
+    color: rgba(233, 250, 252, .92);
+    font-size: 1.34rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    text-shadow: 0 .3rem .8rem rgba(0, 0, 0, .18);
+    opacity: .94;
+}
+
+.portfolio-layer a:hover,
+.portfolio-layer a:focus-visible {
+    border-color: rgba(180, 248, 255, .34);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, .16), rgba(255, 255, 255, .04) 52%),
+        linear-gradient(135deg, rgba(9, 22, 31, .95), rgba(16, 34, 44, .98));
+    transform: translateY(-.32rem);
+    box-shadow:
+        0 1.6rem 3.3rem rgba(0, 0, 0, .34),
+        0 .7rem 1.8rem rgba(14, 255, 255, .18),
+        inset 0 .1rem 0 rgba(255, 255, 255, .18);
+}
+
+.portfolio-layer a:hover::before,
+.portfolio-layer a:focus-visible::before {
+    opacity: 1;
+    transform: none;
+}
+
+.portfolio-layer a:hover::after,
+.portfolio-layer a:focus-visible::after {
+    color: #fff;
+    opacity: 1;
 }
 
 .portfolio-layer a i {
-    font-size: 2rem;
-    color: var(--second-bg-color);
+    display: none;
+}
+
+.portfolio-layer a:hover i,
+.portfolio-layer a:focus-visible i {
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    .portfolio-container {
+        gap: 2.4rem;
+    }
+
+    .portfolio-box .portfolio-layer {
+        padding: 2.2rem 2.2rem 2.35rem;
+    }
+
+    .portfolio-layer h4 {
+        font-size: 2.45rem;
+    }
+
+    .portfolio-layer p {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact h2,
+    .services h2,
+    .portfolio h2 {
+        gap: .8rem;
+        padding-bottom: 1.05rem;
+    }
+
+    .portfolio-container {
+        gap: 2rem;
+    }
+
+    .portfolio-container .portfolio-box {
+        border-radius: 2rem;
+    }
+
+    .portfolio-container .portfolio-box:hover,
+    .portfolio-container .portfolio-box:nth-child(2n):hover {
+        transform: translateY(-.6rem);
+    }
+
+    .portfolio-box .portfolio-layer {
+        gap: .85rem;
+        padding: 2rem 2rem 2.15rem;
+    }
+
+    .portfolio-layer h4 {
+        font-size: 2.3rem;
+    }
+
+    .portfolio-layer p {
+        font-size: 1.34rem;
+        line-height: 1.62;
+    }
+
+    .portfolio-layer a {
+        min-width: 17.2rem;
+        height: 5rem;
+        padding: .55rem 1.4rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .contact h2,
+    .services h2,
+    .portfolio h2 {
+        gap: .55rem;
+        padding-inline: 1rem;
+    }
+
+    .portfolio-box .portfolio-layer {
+        padding: 1.8rem 1.8rem 2rem;
+    }
+
+    .portfolio-layer h4 {
+        font-size: 2.15rem;
+    }
+
+    .portfolio-layer p {
+        font-size: 1.3rem;
+    }
+
+    .portfolio-layer a {
+        min-width: 16rem;
+        height: 4.7rem;
+        padding: .5rem 1.2rem;
+    }
+
+    .portfolio-layer a::after {
+        font-size: 1.18rem;
+        letter-spacing: .1em;
+    }
 }
 
 .contact {
