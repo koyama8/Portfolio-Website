@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Code2, Palette, ShieldCheck, UserRoundCog } from "lucide-react";
+import { Bot, Brush, ServerCog, ShieldCheck } from "lucide-react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import type { NavItem, Project, Service, SocialLink } from "../types";
 import agendaImage from "../../imagens/agenda.png";
@@ -72,22 +72,22 @@ export const socialLinks: SocialLink[] = [
 
 export const services: Service[] = [
   {
-    title: "Programming",
-    Icon: Code2,
+    title: "Test Automation",
+    Icon: Bot,
     description:
-      "Automação de testes com foco em eficiência, cobertura e qualidade contínua. Experiência no desenvolvimento de suítes robustas para aplicações web, validando fluxos críticos em múltiplos dispositivos e navegadores.",
+      "Automação de testes para aplicações web com foco em cobertura, estabilidade e qualidade contínua. Desenvolvimento de suítes E2E e regressivas com Selenium, Cypress, Java, JavaScript e integração em pipelines CI/CD, validando fluxos críticos em múltiplos navegadores e dispositivos.",
   },
   {
-    title: "Profile",
-    Icon: UserRoundCog,
+    title: "API Quality",
+    Icon: ServerCog,
     description:
-      "Criação de experiências de usuário focadas em usabilidade e design centrado no usuário, utilizando práticas de UX/UI, testes de usabilidade, wireframes e prototipação.",
+      "Testes e validações de APIs REST com foco em confiabilidade, contratos, status codes, autenticação, payloads e regras de negócio. Experiência com Postman, Bruno, REST Assured, Cypress API, Express, Java, JavaScript e execução automatizada em CI/CD.",
   },
   {
-    title: "Graphic Design",
-    Icon: Palette,
+    title: "Web & UI Design",
+    Icon: Brush,
     description:
-      "Desenvolvimento de identidades visuais e interfaces gráficas, aplicando princípios de design visual para criar layouts atraentes, funcionais e alinhados ao valor do produto.",
+      "Desenvolvimento de identidades visuais, web design e interfaces digitais com foco em clareza, usabilidade e consistência visual. Criação de layouts responsivos, protótipos, design systems e experiências centradas no usuário com Figma, Adobe XD e princípios de acessibilidade.",
   },
 ];
 
