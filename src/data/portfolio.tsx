@@ -31,7 +31,7 @@ export const profile: {
   typedRoles: ["Automação", "UX/UI Design", "REST Assured", "Express", "CI/CD", "Selenium", "Cypress"],
   aboutImage: homeImage,
   intro:
-    "Profissional de QA Manual e Automação, focado em testes funcionais, regressivos, E2E, APIs e qualidade de produtos digitais. Também atuo com UX/UI Design, unindo usabilidade, interface e eficiência técnica para criar experiências mais confiáveis.",
+    "Transformo requisitos em testes claros, automações confiáveis e validações E2E para web, APIs e UX/UI. Meu foco é antecipar falhas, dar confiança às entregas e conectar qualidade técnica à experiência do usuário.",
   aboutParagraphs: [
     <>
       Sou <strong>profissional de QA Manual e Automação</strong>, com experiência na criação de
