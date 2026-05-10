@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { profile, qualityBadge, socialLinks } from "../data/portfolio";
+import { profile, socialLinks } from "../data/portfolio";
 import { useTypewriter } from "../hooks/useTypewriter";
 
 export function Home() {
@@ -8,12 +8,10 @@ export function Home() {
     backSpeed: 80,
     backDelay: 1100,
   });
-  const BadgeIcon = qualityBadge.Icon;
-
   return (
     <section className="home" id="home">
       <motion.div className="home-content">
-        <h3>Bem vindo, Eu sou</h3>
+        <h3>Bem-vindo, eu sou</h3>
         <h1>{profile.name}.</h1>
         <h3>
           <span className="multiple-text" aria-live="polite">
@@ -22,11 +20,6 @@ export function Home() {
         </h3>
 
         <p className="whitespace-nowrap">{profile.intro}</p>
-
-        <div className="home-stack-badge">
-          <BadgeIcon aria-hidden="true" />
-          <span>{qualityBadge.label}</span>
-        </div>
 
         <div className="social-media" aria-label="Redes sociais">
           {socialLinks.map(({ label, href, Icon }) => (

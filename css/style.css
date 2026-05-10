@@ -460,7 +460,8 @@ section {
     .navbar::after,
     .navbar a.active,
     .home-content::before,
-    .home-content::after {
+    .home-content::after,
+    .services-box i::before {
         animation: none;
     }
 
@@ -562,7 +563,7 @@ section {
     border-radius: 0;
     background: none;
     box-shadow: none;
-    font-size: 3.8rem;
+    font-size: 3rem;
     font-weight: 700;
     letter-spacing: -.03em;
     line-height: 1.1;
@@ -584,8 +585,8 @@ section {
     align-items: center;
     gap: 1.4rem;
     width: fit-content;
-    margin: 2.4rem 0 2.7rem;
-    font-size: 3.4rem;
+    margin: 2rem 0 2.3rem;
+    font-size: 2.7rem;
     font-weight: 700;
     letter-spacing: -.03em;
     line-height: 1;
@@ -596,7 +597,7 @@ section {
 .home-content h3:nth-of-type(2)::before {
     content: "";
     width: .42rem;
-    height: 4.8rem;
+    height: 4.1rem;
     border-radius: 999px;
     background: linear-gradient(180deg, rgba(14, 255, 255, .98), rgba(22, 224, 143, .58), rgba(14, 255, 255, 0));
     box-shadow:
@@ -622,7 +623,7 @@ span {
     position: relative;
     max-width: 9ch;
     margin: 0;
-    font-size: clamp(6.2rem, 7.2vw, 8.8rem);
+    font-size: 6.8rem;
     font-weight: 800;
     line-height: .9;
     letter-spacing: -.05em;
@@ -652,12 +653,12 @@ span {
 }
 
 .home-content p:last-of-type {
-    max-width: 100%;
-    margin-top: 3rem;
+    max-width: 98rem;
+    margin-top: 2.4rem;
     padding-left: 0;
     padding-right: 1.6rem;
     border-left: 0;
-    font-size: 2.45rem;
+    font-size: 1.9rem;
     line-height: 1.62;
     letter-spacing: -.01em;
     color: rgba(236, 242, 247, .9);
@@ -959,6 +960,8 @@ span {
 }
 
 .services-box i {
+    position: relative;
+    overflow: hidden;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -966,31 +969,60 @@ span {
     height: 9.2rem;
     margin-bottom: 2.2rem;
     font-size: 4.8rem;
-    color: #efffff;
+    color: #f9d976;
     background:
         linear-gradient(180deg, rgba(255, 255, 255, .22), rgba(255, 255, 255, .04)),
         linear-gradient(155deg, rgba(78, 93, 115, .98), rgba(35, 42, 55, .98) 58%, rgba(24, 29, 39, .98));
-    border: .1rem solid rgba(255, 255, 255, .1);
+    border: .1rem solid rgba(249, 217, 118, .24);
     border-radius: 2.4rem;
     box-shadow:
         0 1.8rem 2.8rem rgba(0, 0, 0, .28),
-        0 .8rem 1.8rem rgba(14, 255, 255, .1),
+        0 .8rem 1.8rem rgba(249, 217, 118, .12),
         inset 0 .14rem 0 rgba(255, 255, 255, .2),
         inset 0 -.14rem 0 rgba(255, 255, 255, .04);
-    text-shadow: 0 0 2.6rem rgba(14, 255, 255, .32);
+    text-shadow: 0 0 2.6rem rgba(249, 217, 118, .28);
     transform: translateZ(4rem);
     transition: transform .45s ease, box-shadow .45s ease, color .35s ease;
 }
 
+.services-box i::before {
+    content: "";
+    position: absolute;
+    top: -38%;
+    left: -55%;
+    width: 2.8rem;
+    height: 176%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 239, 166, .48), rgba(255, 255, 255, 0));
+    filter: blur(.16rem);
+    opacity: .64;
+    transform: rotate(24deg);
+    animation: serviceIconSheen 3.8s ease-in-out infinite;
+}
+
 .services-container .services-box:hover i {
-    color: var(--main-color);
+    color: #ffefaa;
     box-shadow:
         0 2.4rem 3.4rem rgba(0, 0, 0, .32),
-        0 1rem 2.2rem rgba(14, 255, 255, .16),
-        0 0 2.8rem rgba(14, 255, 255, .12),
+        0 1rem 2.2rem rgba(249, 217, 118, .2),
+        0 0 2.8rem rgba(249, 217, 118, .18),
         inset 0 .16rem 0 rgba(255, 255, 255, .24),
         inset 0 -.14rem 0 rgba(255, 255, 255, .04);
     transform: translateZ(5.2rem) translateY(-.35rem);
+}
+
+.services-container .services-box:hover i::before {
+    opacity: .9;
+    animation-duration: 2.4s;
+}
+
+@keyframes serviceIconSheen {
+    0%, 36% {
+        transform: translateX(0) rotate(24deg);
+    }
+
+    72%, 100% {
+        transform: translateX(15rem) rotate(24deg);
+    }
 }
 
 .services-box h3 {
@@ -1244,6 +1276,12 @@ span {
 }
 
 .portfolio-container .portfolio-box {
+    --project-accent: 14, 255, 255;
+    --project-accent-2: 22, 224, 143;
+    --project-cta-start: #e7fffa;
+    --project-cta-mid: #7df4da;
+    --project-cta-end: #22cbbb;
+    --project-ink: #062228;
     position: relative;
     aspect-ratio: 640 / 426;
     border: .1rem solid rgba(255, 255, 255, .08);
@@ -1263,6 +1301,60 @@ span {
         border-color .4s ease;
 }
 
+.portfolio-container .portfolio-box[data-tone="amber"] {
+    --project-accent: 249, 217, 118;
+    --project-accent-2: 255, 145, 77;
+    --project-cta-start: #fff4be;
+    --project-cta-mid: #f9d976;
+    --project-cta-end: #ff914d;
+    --project-ink: #241708;
+}
+
+.portfolio-container .portfolio-box[data-tone="cyan"] {
+    --project-accent: 69, 231, 255;
+    --project-accent-2: 22, 224, 143;
+    --project-cta-start: #e8fbff;
+    --project-cta-mid: #45e7ff;
+    --project-cta-end: #16e08f;
+    --project-ink: #041b22;
+}
+
+.portfolio-container .portfolio-box[data-tone="emerald"] {
+    --project-accent: 87, 240, 184;
+    --project-accent-2: 14, 255, 255;
+    --project-cta-start: #e9fff7;
+    --project-cta-mid: #57f0b8;
+    --project-cta-end: #1fbf96;
+    --project-ink: #062018;
+}
+
+.portfolio-container .portfolio-box[data-tone="blue"] {
+    --project-accent: 139, 212, 255;
+    --project-accent-2: 88, 151, 255;
+    --project-cta-start: #edf8ff;
+    --project-cta-mid: #8bd4ff;
+    --project-cta-end: #5897ff;
+    --project-ink: #06182b;
+}
+
+.portfolio-container .portfolio-box[data-tone="violet"] {
+    --project-accent: 196, 154, 255;
+    --project-accent-2: 255, 138, 216;
+    --project-cta-start: #fbf3ff;
+    --project-cta-mid: #c49aff;
+    --project-cta-end: #ff8ad8;
+    --project-ink: #22102d;
+}
+
+.portfolio-container .portfolio-box[data-tone="mint"] {
+    --project-accent: 125, 244, 218;
+    --project-accent-2: 180, 255, 197;
+    --project-cta-start: #f0fff9;
+    --project-cta-mid: #7df4da;
+    --project-cta-end: #b4ffc5;
+    --project-ink: #06251f;
+}
+
 .portfolio-container .portfolio-box::before,
 .portfolio-container .portfolio-box::after {
     content: "";
@@ -1274,7 +1366,7 @@ span {
     inset: 0;
     background:
         linear-gradient(180deg, rgba(255, 255, 255, .14), rgba(255, 255, 255, 0) 26%),
-        linear-gradient(125deg, rgba(14, 255, 255, .12), rgba(14, 255, 255, 0) 38%);
+        linear-gradient(125deg, rgba(var(--project-accent), .14), rgba(var(--project-accent), 0) 38%);
     opacity: .7;
     z-index: 1;
 }
@@ -1285,7 +1377,7 @@ span {
     bottom: -2.1rem;
     height: 3.6rem;
     border-radius: 999px;
-    background: radial-gradient(circle at center, rgba(14, 255, 255, .28) 0%, rgba(14, 255, 255, 0) 72%);
+    background: radial-gradient(circle at center, rgba(var(--project-accent), .3) 0%, rgba(var(--project-accent), 0) 72%);
     filter: blur(1.7rem);
     opacity: .34;
     transition: opacity .45s ease, transform .45s ease;
@@ -1293,10 +1385,10 @@ span {
 }
 
 .portfolio-container .portfolio-box:hover {
-    border-color: rgba(14, 255, 255, .24);
+    border-color: rgba(var(--project-accent), .3);
     box-shadow:
         0 3rem 5.4rem rgba(0, 0, 0, .34),
-        0 1.4rem 2.4rem rgba(14, 255, 255, .12),
+        0 1.4rem 2.4rem rgba(var(--project-accent), .14),
         inset 0 .12rem 0 rgba(255, 255, 255, .2);
     transform: translateY(-1.1rem) rotateX(7deg) rotateY(-7deg);
 }
@@ -1333,8 +1425,8 @@ span {
     inset: 0;
     background:
         linear-gradient(180deg, rgba(5, 8, 13, .04) 0%, rgba(6, 10, 16, .22) 22%, rgba(8, 15, 22, .72) 58%, rgba(12, 24, 32, .95) 100%),
-        linear-gradient(135deg, rgba(14, 255, 255, .18), rgba(14, 255, 255, 0) 42%),
-        linear-gradient(320deg, rgba(22, 224, 143, .18), rgba(22, 224, 143, 0) 46%);
+        linear-gradient(135deg, rgba(var(--project-accent), .2), rgba(var(--project-accent), 0) 42%),
+        linear-gradient(320deg, rgba(var(--project-accent-2), .18), rgba(var(--project-accent-2), 0) 46%);
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
@@ -1371,7 +1463,7 @@ span {
 
 .portfolio-layer h4,
 .portfolio-layer p,
-.portfolio-layer a {
+.portfolio-layer .project-cta {
     position: relative;
     z-index: 1;
     opacity: 0;
@@ -1393,7 +1485,7 @@ span {
     transition-delay: .1s;
 }
 
-.portfolio-box:hover .portfolio-layer a {
+.portfolio-box:hover .portfolio-layer .project-cta {
     opacity: 1;
     transform: translateY(0) translateZ(4rem);
     transition-delay: .15s;
@@ -1413,28 +1505,38 @@ span {
     color: rgba(255, 255, 255, .84);
 }
 
-.portfolio-layer a {
+.portfolio-layer .project-cta {
     position: relative;
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    gap: .72rem;
     align-self: flex-start;
-    min-width: 18.8rem;
-    height: 5.3rem;
-    margin-top: .55rem;
-    padding: .6rem 1.6rem;
-    border: .1rem solid rgba(153, 241, 255, .2);
+    width: fit-content;
+    max-width: 100%;
+    min-width: 0;
+    min-height: 4.25rem;
+    margin-top: .25rem;
+    padding: .52rem 1.2rem .52rem 1.35rem;
+    border: .1rem solid rgba(var(--project-accent), .36);
     background:
-        linear-gradient(180deg, rgba(255, 255, 255, .12), rgba(255, 255, 255, .03) 54%),
-        linear-gradient(135deg, rgba(7, 17, 25, .92), rgba(14, 28, 37, .96));
+        linear-gradient(180deg, rgba(255, 255, 255, .4), rgba(255, 255, 255, 0) 42%),
+        linear-gradient(135deg, var(--project-cta-start), var(--project-cta-mid) 46%, var(--project-cta-end));
     border-radius: 999px;
     box-shadow:
-        0 1.2rem 2.8rem rgba(0, 0, 0, .28),
-        0 .45rem 1.2rem rgba(14, 255, 255, .12),
-        inset 0 .1rem 0 rgba(255, 255, 255, .14),
-        inset 0 -.12rem .45rem rgba(5, 11, 17, .28);
+        0 1.25rem 2.6rem rgba(var(--project-accent), .16),
+        0 .65rem 1.5rem rgba(0, 0, 0, .2),
+        inset 0 .12rem 0 rgba(255, 255, 255, .54),
+        inset 0 -.65rem 1rem rgba(4, 22, 27, .12);
     backdrop-filter: blur(1rem) saturate(145%);
     -webkit-backdrop-filter: blur(1rem) saturate(145%);
+    color: var(--project-ink);
+    font-size: 1.18rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+    line-height: 1;
+    text-transform: uppercase;
+    text-shadow: 0 .12rem .22rem rgba(255, 255, 255, .28);
     overflow: hidden;
     isolation: isolate;
     white-space: nowrap;
@@ -1442,11 +1544,12 @@ span {
         transform .38s ease,
         box-shadow .38s ease,
         border-color .38s ease,
-        background .38s ease;
+        background .38s ease,
+        filter .38s ease;
 }
 
-.portfolio-layer a::before,
-.portfolio-layer a::after {
+.portfolio-layer .project-cta::before,
+.portfolio-layer .project-cta::after {
     content: "";
     position: absolute;
     pointer-events: none;
@@ -1455,61 +1558,93 @@ span {
         transform .38s ease;
 }
 
-.portfolio-layer a::before {
+.portfolio-layer .project-cta::before {
     inset: .12rem;
     border-radius: inherit;
     background:
-        linear-gradient(180deg, rgba(255, 255, 255, .11), rgba(255, 255, 255, 0) 46%),
-        linear-gradient(135deg, rgba(14, 255, 255, .14), rgba(14, 255, 255, 0) 46%);
+        linear-gradient(180deg, rgba(255, 255, 255, .3), rgba(255, 255, 255, 0) 44%),
+        linear-gradient(115deg, rgba(255, 255, 255, 0) 54%, rgba(255, 255, 255, .34) 68%, rgba(255, 255, 255, 0) 82%);
     opacity: .92;
     z-index: 0;
 }
 
-.portfolio-layer a::after {
-    content: "Ver projeto";
-    position: relative;
+.portfolio-layer .project-cta::after {
+    top: -130%;
+    left: -28%;
+    width: 18%;
+    height: 360%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, .62), rgba(255, 255, 255, 0));
+    opacity: .48;
+    transform: translateX(0) rotate(24deg);
     z-index: 1;
-    color: rgba(233, 250, 252, .92);
-    font-size: 1.34rem;
-    font-weight: 700;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    text-shadow: 0 .3rem .8rem rgba(0, 0, 0, .18);
-    opacity: .94;
 }
 
-.portfolio-layer a:hover,
-.portfolio-layer a:focus-visible {
-    border-color: rgba(180, 248, 255, .34);
+.portfolio-layer .project-cta span,
+.portfolio-layer .project-cta svg {
+    position: relative;
+    z-index: 2;
+}
+
+.portfolio-layer .project-cta span {
+    background: none;
+    background-clip: border-box;
+    -webkit-background-clip: border-box;
+    -webkit-text-fill-color: currentColor;
+    filter: none;
+    text-decoration: none;
+}
+
+.portfolio-layer .project-cta svg {
+    width: 1.72rem;
+    height: 1.72rem;
+    stroke-width: 2.65;
+    transition: transform .35s ease;
+}
+
+.portfolio-box:hover .portfolio-layer .project-cta:hover,
+.portfolio-box:focus-within .portfolio-layer .project-cta:focus-visible,
+.portfolio-layer .project-cta:focus-visible {
+    border-color: rgba(255, 255, 255, .56);
     background:
-        linear-gradient(180deg, rgba(255, 255, 255, .16), rgba(255, 255, 255, .04) 52%),
-        linear-gradient(135deg, rgba(9, 22, 31, .95), rgba(16, 34, 44, .98));
-    transform: translateY(-.32rem);
+        linear-gradient(180deg, rgba(255, 255, 255, .52), rgba(255, 255, 255, .04) 44%),
+        linear-gradient(135deg, var(--project-cta-start), var(--project-cta-mid) 38%, var(--project-cta-end));
+    transform: translateY(-.38rem) translateZ(4rem) scale(1.02);
     box-shadow:
-        0 1.6rem 3.3rem rgba(0, 0, 0, .34),
-        0 .7rem 1.8rem rgba(14, 255, 255, .18),
-        inset 0 .1rem 0 rgba(255, 255, 255, .18);
+        0 1.65rem 3.2rem rgba(var(--project-accent), .24),
+        0 .8rem 1.8rem rgba(0, 0, 0, .24),
+        inset 0 .14rem 0 rgba(255, 255, 255, .62),
+        inset 0 -.7rem 1rem rgba(4, 22, 27, .14);
+    filter: saturate(112%);
 }
 
-.portfolio-layer a:hover::before,
-.portfolio-layer a:focus-visible::before {
+.portfolio-box:hover .portfolio-layer .project-cta:active,
+.portfolio-box:focus-within .portfolio-layer .project-cta:active {
+    transform: translateY(-.12rem) translateZ(4rem) scale(.985);
+}
+
+.portfolio-box:hover .portfolio-layer .project-cta:hover::before,
+.portfolio-box:focus-within .portfolio-layer .project-cta:focus-visible::before,
+.portfolio-layer .project-cta:focus-visible::before {
     opacity: 1;
     transform: none;
 }
 
-.portfolio-layer a:hover::after,
-.portfolio-layer a:focus-visible::after {
-    color: #fff;
-    opacity: 1;
+.portfolio-box:hover .portfolio-layer .project-cta:hover::after,
+.portfolio-box:focus-within .portfolio-layer .project-cta:focus-visible::after,
+.portfolio-layer .project-cta:focus-visible::after {
+    opacity: .72;
+    transform: translateX(720%) rotate(24deg);
 }
 
-.portfolio-layer a i {
-    display: none;
+.portfolio-box:hover .portfolio-layer .project-cta:hover svg,
+.portfolio-box:focus-within .portfolio-layer .project-cta:focus-visible svg,
+.portfolio-layer .project-cta:focus-visible svg {
+    transform: translate(.18rem, -.18rem);
 }
 
-.portfolio-layer a:hover i,
-.portfolio-layer a:focus-visible i {
-    display: none;
+.portfolio-layer .project-cta:focus-visible {
+    outline: .18rem solid rgba(var(--project-accent), .32);
+    outline-offset: .28rem;
 }
 
 @media (max-width: 1200px) {
@@ -1565,10 +1700,10 @@ span {
         line-height: 1.62;
     }
 
-    .portfolio-layer a {
-        min-width: 17.2rem;
-        height: 5rem;
-        padding: .55rem 1.4rem;
+    .portfolio-layer .project-cta {
+        min-height: 4rem;
+        padding: .46rem 1.08rem .46rem 1.2rem;
+        font-size: 1.08rem;
     }
 }
 
@@ -1592,15 +1727,11 @@ span {
         font-size: 1.3rem;
     }
 
-    .portfolio-layer a {
-        min-width: 16rem;
-        height: 4.7rem;
-        padding: .5rem 1.2rem;
-    }
-
-    .portfolio-layer a::after {
-        font-size: 1.18rem;
-        letter-spacing: .1em;
+    .portfolio-layer .project-cta {
+        min-height: 3.75rem;
+        padding: .42rem .95rem .42rem 1.05rem;
+        font-size: 1rem;
+        letter-spacing: .06em;
     }
 }
 
@@ -2127,11 +2258,11 @@ span {
     }
 
     .home-content h1 {
-        font-size: clamp(5.8rem, 7vw, 7.8rem);
+        font-size: 6.2rem;
     }
 
     .home-content p:last-of-type {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
         padding-right: 0;
     }
 
@@ -2344,23 +2475,23 @@ span {
     }
 
     .home-content h3 {
-        font-size: 3rem;
+        font-size: 2.6rem;
         letter-spacing: -.03em;
     }
 
     .home-content h3:nth-of-type(2) {
-        margin: 2.2rem 0 2.5rem;
-        font-size: 2.7rem;
+        margin: 1.8rem 0 2.1rem;
+        font-size: 2.35rem;
         letter-spacing: .01em;
     }
 
     .home-content h3:nth-of-type(2)::before {
-        height: 4.2rem;
+        height: 3.8rem;
     }
 
     .home-content h1 {
         max-width: 100%;
-        font-size: clamp(5.2rem, 10vw, 6.8rem);
+        font-size: 5.4rem;
     }
 
     .home-content h1::after {
@@ -2369,9 +2500,9 @@ span {
     }
 
     .home-content p:last-of-type {
-        margin-top: 2.7rem;
+        margin-top: 2.2rem;
         padding-right: 0;
-        font-size: 2rem;
+        font-size: 1.68rem;
         line-height: 1.68;
     }
 
@@ -2559,7 +2690,7 @@ span {
     }
 
     .home-content h3 {
-        font-size: 2.5rem;
+        font-size: 2.25rem;
         line-height: 1.12;
     }
 
@@ -2569,7 +2700,7 @@ span {
 
     .home-content h3:nth-of-type(2) {
         margin: 1.9rem 0 2.1rem;
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
     .home-content h3:nth-of-type(2)::before {
@@ -2578,7 +2709,7 @@ span {
     }
 
     .home-content h1 {
-        font-size: clamp(4.4rem, 11vw, 5.4rem);
+        font-size: 4.5rem;
     }
 
     .home-content h1::after {
@@ -2588,7 +2719,7 @@ span {
 
     .home-content p:last-of-type {
         margin-top: 2.3rem;
-        font-size: 1.86rem;
+        font-size: 1.55rem;
         line-height: 1.66;
     }
 
@@ -2720,42 +2851,6 @@ span {
     stroke-width: 2.35;
 }
 
-.home-stack-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: .85rem;
-    max-width: min(72rem, 100%);
-    margin-top: 2.2rem;
-    padding: .95rem 1.25rem;
-    border: .1rem solid rgba(164, 255, 236, .16);
-    border-radius: 999px;
-    background:
-        linear-gradient(180deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .02)),
-        linear-gradient(145deg, rgba(38, 46, 58, .78), rgba(24, 30, 39, .84));
-    box-shadow:
-        inset 0 .1rem 0 rgba(255, 255, 255, .12),
-        0 .9rem 1.8rem rgba(0, 0, 0, .12);
-    color: rgba(235, 247, 249, .88);
-    font-size: 1.38rem;
-    line-height: 1.5;
-}
-
-.home-stack-badge svg {
-    width: 1.9rem;
-    height: 1.9rem;
-    color: var(--main-color);
-    flex: none;
-}
-
-.home-stack-badge span {
-    display: block;
-    min-width: 0;
-    background: none;
-    -webkit-text-fill-color: currentColor;
-    filter: none;
-    overflow-wrap: anywhere;
-}
-
 .home-content p.whitespace-nowrap {
     max-width: 100%;
     white-space: normal;
@@ -2773,6 +2868,8 @@ span {
 
 .services-box i svg,
 .contact .contact-note i svg {
+    position: relative;
+    z-index: 2;
     width: 1em;
     height: 1em;
     color: currentColor;
@@ -2784,10 +2881,10 @@ span {
     z-index: 1;
     display: flex;
     align-items: center;
-    gap: .6rem;
+    gap: .68rem;
     flex-wrap: wrap;
     padding: 0;
-    margin: .15rem 0 0;
+    margin: .22rem 0 0;
     list-style: none;
     opacity: 0;
     transform: translateY(1.2rem) translateZ(4rem);
@@ -2797,15 +2894,139 @@ span {
 }
 
 .portfolio-layer .project-tags li {
-    padding: .42rem .78rem;
-    border: .1rem solid rgba(164, 255, 236, .18);
+    --tag-accent: var(--project-accent);
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: .58rem;
+    min-height: 2.8rem;
+    padding: .46rem .86rem .46rem .56rem;
+    border: .1rem solid rgba(var(--tag-accent), .28);
     border-radius: 999px;
-    background: rgba(7, 17, 25, .46);
-    color: rgba(231, 250, 252, .82);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, .12), rgba(255, 255, 255, .02)),
+        linear-gradient(135deg, rgba(7, 17, 25, .72), rgba(14, 28, 37, .8));
+    box-shadow:
+        0 .55rem 1.35rem rgba(var(--tag-accent), .1),
+        inset 0 .1rem 0 rgba(255, 255, 255, .14);
+    color: rgba(239, 254, 255, .94);
     font-size: 1.08rem;
     font-weight: 700;
     letter-spacing: .08em;
     text-transform: uppercase;
+    line-height: 1;
+    overflow: hidden;
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        background .35s ease,
+        box-shadow .35s ease,
+        color .35s ease;
+}
+
+.portfolio-layer .project-tags span {
+    background: none;
+    background-clip: border-box;
+    -webkit-background-clip: border-box;
+    -webkit-text-fill-color: currentColor;
+    filter: none;
+}
+
+.portfolio-layer .project-tags .project-tag-icon {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.52rem;
+    height: 1.52rem;
+    border-radius: 50%;
+    border: .1rem solid rgba(var(--tag-accent), .34);
+    background:
+        radial-gradient(circle at 35% 25%, rgba(255, 255, 255, .32), rgba(255, 255, 255, 0) 48%),
+        rgba(var(--tag-accent), .14);
+    color: rgb(var(--tag-accent));
+    box-shadow:
+        0 0 .9rem rgba(var(--tag-accent), .42),
+        inset 0 .08rem 0 rgba(255, 255, 255, .18);
+    flex: none;
+}
+
+.portfolio-layer .project-tags .project-tag-icon svg {
+    width: .96rem;
+    height: .96rem;
+    color: currentColor;
+    stroke-width: 2.35;
+}
+
+.portfolio-layer .project-tags .project-tag-label {
+    position: relative;
+    z-index: 1;
+}
+
+.portfolio-layer .project-tags li::after {
+    content: "";
+    position: absolute;
+    inset: .1rem;
+    border-radius: inherit;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0) 42%, rgba(255, 255, 255, .14) 54%, rgba(255, 255, 255, 0) 66%);
+    opacity: 0;
+    transform: translateX(-32%);
+    transition: opacity .35s ease, transform .45s ease;
+    pointer-events: none;
+}
+
+.portfolio-layer .project-tags .tag-java,
+.portfolio-layer .project-tags .tag-crud {
+    --tag-accent: 249, 217, 118;
+}
+
+.portfolio-layer .project-tags .tag-selenium,
+.portfolio-layer .project-tags .tag-cypress,
+.portfolio-layer .project-tags .tag-bem-estar {
+    --tag-accent: 22, 224, 143;
+}
+
+.portfolio-layer .project-tags .tag-qa,
+.portfolio-layer .project-tags .tag-api,
+.portfolio-layer .project-tags .tag-rest-assured {
+    --tag-accent: 69, 231, 255;
+}
+
+.portfolio-layer .project-tags .tag-social,
+.portfolio-layer .project-tags .tag-privacidade,
+.portfolio-layer .project-tags .tag-web {
+    --tag-accent: 139, 212, 255;
+}
+
+.portfolio-layer .project-tags .tag-forms {
+    --tag-accent: 87, 240, 184;
+}
+
+.portfolio-layer .project-tags .tag-ux,
+.portfolio-layer .project-tags .tag-ui,
+.portfolio-layer .project-tags .tag-ux-ui,
+.portfolio-layer .project-tags .tag-figma,
+.portfolio-layer .project-tags .tag-prototype {
+    --tag-accent: 196, 154, 255;
+}
+
+.portfolio-layer .project-tags .project-tags-more {
+    display: none;
+    --tag-accent: var(--project-accent-2);
+}
+
+.portfolio-layer .project-tags .project-tag-primary {
+    border-color: rgba(var(--tag-accent), .42);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, .14), rgba(255, 255, 255, .03)),
+        linear-gradient(135deg, rgba(var(--tag-accent), .16), rgba(7, 17, 25, .72) 42%, rgba(14, 28, 37, .82));
+}
+
+.portfolio-layer .project-tags .project-tag-primary .project-tag-icon {
+    background:
+        radial-gradient(circle at 35% 25%, rgba(255, 255, 255, .44), rgba(255, 255, 255, 0) 48%),
+        rgba(var(--tag-accent), .22);
 }
 
 .portfolio-box:hover .portfolio-layer .project-tags,
@@ -2815,6 +3036,40 @@ span {
     transition-delay: .13s;
 }
 
+.portfolio-box:hover .portfolio-layer .project-tags li,
+.portfolio-box:focus-within .portfolio-layer .project-tags li {
+    animation: projectTagFloat 3.4s ease-in-out infinite;
+}
+
+.portfolio-box:hover .portfolio-layer .project-tags li:nth-child(2),
+.portfolio-box:focus-within .portfolio-layer .project-tags li:nth-child(2) {
+    animation-delay: .16s;
+}
+
+.portfolio-box:hover .portfolio-layer .project-tags li:nth-child(3),
+.portfolio-box:focus-within .portfolio-layer .project-tags li:nth-child(3) {
+    animation-delay: .32s;
+}
+
+.portfolio-layer .project-tags li:hover,
+.portfolio-layer .project-tags li:focus-within {
+    border-color: rgba(var(--tag-accent), .5);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, .16), rgba(255, 255, 255, .03)),
+        linear-gradient(135deg, rgba(15, 28, 38, .82), rgba(25, 43, 52, .86));
+    box-shadow:
+        0 .85rem 1.6rem rgba(var(--tag-accent), .16),
+        inset 0 .1rem 0 rgba(255, 255, 255, .18);
+    color: #fff;
+    transform: translateY(-.16rem);
+}
+
+.portfolio-layer .project-tags li:hover::after,
+.portfolio-layer .project-tags li:focus-within::after {
+    opacity: 1;
+    transform: translateX(32%);
+}
+
 .portfolio-box:focus-within .portfolio-layer {
     opacity: 1;
     transform: translateY(0);
@@ -2822,9 +3077,36 @@ span {
 
 .portfolio-box:focus-within .portfolio-layer h4,
 .portfolio-box:focus-within .portfolio-layer p,
-.portfolio-box:focus-within .portfolio-layer a {
+.portfolio-box:focus-within .portfolio-layer .project-cta {
     opacity: 1;
     transform: translateY(0) translateZ(4rem);
+}
+
+@keyframes projectTagFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-.18rem);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .portfolio-layer .project-cta,
+    .portfolio-layer .project-cta::before,
+    .portfolio-layer .project-cta::after,
+    .portfolio-layer .project-cta svg,
+    .portfolio-layer .project-tags,
+    .portfolio-layer .project-tags li,
+    .portfolio-layer .project-tags li::after {
+        transition: none;
+    }
+
+    .portfolio-box:hover .portfolio-layer .project-tags li,
+    .portfolio-box:focus-within .portfolio-layer .project-tags li {
+        animation: none;
+    }
 }
 
 .contact .contact-btn-secondary svg,
@@ -2853,18 +3135,24 @@ span {
 }
 
 @media (max-width: 768px) {
-    .home-stack-badge {
-        border-radius: 1.45rem;
-        font-size: 1.28rem;
-    }
-
     .portfolio-layer .project-tags {
-        gap: .45rem;
+        gap: .48rem;
     }
 
     .portfolio-layer .project-tags li {
         font-size: .98rem;
-        padding: .34rem .64rem;
+        min-height: 2.45rem;
+        padding: .34rem .68rem .34rem .48rem;
+    }
+
+    .portfolio-layer .project-tags .project-tag-icon {
+        width: 1.34rem;
+        height: 1.34rem;
+    }
+
+    .portfolio-layer .project-tags .project-tag-icon svg {
+        width: .84rem;
+        height: .84rem;
     }
 }
 
@@ -2872,18 +3160,11 @@ span {
     .home-content h1 {
         max-width: 8ch;
         overflow-wrap: anywhere;
-        font-size: clamp(4rem, 10vw, 4.8rem);
+        font-size: 4.2rem;
     }
 
-    .home-content p.whitespace-nowrap,
-    .home-stack-badge {
+    .home-content p.whitespace-nowrap {
         max-width: 40rem;
-    }
-
-    .home-stack-badge {
-        width: 100%;
-        align-items: flex-start;
-        border-radius: 1.35rem;
     }
 }
 
@@ -2891,16 +3172,34 @@ span {
     .home-content h1 {
         max-width: 8ch;
         overflow-wrap: anywhere;
-        font-size: clamp(4rem, 10vw, 4.8rem);
-    }
-
-    .home-stack-badge {
-        width: 100%;
-        align-items: flex-start;
-        border-radius: 1.35rem;
+        font-size: 4rem;
     }
 
     .portfolio-layer .project-tags {
+        gap: .42rem;
+        margin-top: 0;
+    }
+
+    .portfolio-layer .project-tags li {
+        font-size: .9rem;
+        letter-spacing: .06em;
+    }
+
+    .portfolio-layer .project-tags .project-tag-icon {
+        width: 1.22rem;
+        height: 1.22rem;
+    }
+
+    .portfolio-layer .project-tags .project-tag-icon svg {
+        width: .78rem;
+        height: .78rem;
+    }
+
+    .portfolio-layer .project-tags li:nth-child(n+3):not(.project-tags-more) {
         display: none;
+    }
+
+    .portfolio-layer .project-tags .project-tags-more {
+        display: inline-flex;
     }
 }

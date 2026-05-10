@@ -1,16 +1,84 @@
 import { motion } from "framer-motion";
+import {
+  Code,
+  Database,
+  ExternalLink,
+  FileText,
+  Globe,
+  HeartPulse,
+  LockKeyhole,
+  MousePointer2,
+  Palette,
+  PanelsTopLeft,
+  ServerCog,
+  ShieldCheck,
+  UsersRound,
+  Workflow,
+} from "lucide-react";
+import { FaJava } from "react-icons/fa";
+import { SiCypress, SiFigma, SiOpenapiinitiative, SiSelenium } from "react-icons/si";
 import { projects } from "../data/portfolio";
 import { SectionHeading } from "./SectionHeading";
+
+const getTagClassName = (tag: string) =>
+  tag
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+
+const getTagIcon = (tag: string) => {
+  switch (getTagClassName(tag)) {
+    case "java":
+      return <FaJava />;
+    case "selenium":
+      return <SiSelenium />;
+    case "cypress":
+      return <SiCypress />;
+    case "rest-assured":
+      return <SiOpenapiinitiative />;
+    case "api":
+      return <ServerCog />;
+    case "qa":
+      return <ShieldCheck />;
+    case "social":
+      return <UsersRound />;
+    case "privacidade":
+      return <LockKeyhole />;
+    case "web":
+      return <Globe />;
+    case "crud":
+      return <Database />;
+    case "forms":
+      return <FileText />;
+    case "ux":
+      return <MousePointer2 />;
+    case "ui":
+      return <PanelsTopLeft />;
+    case "ux-ui":
+      return <Palette />;
+    case "figma":
+      return <SiFigma />;
+    case "bem-estar":
+      return <HeartPulse />;
+    case "prototype":
+      return <Workflow />;
+    default:
+      return <Code />;
+  }
+};
 
 export function Portfolio() {
   return (
     <section className="portfolio" id="portfolio">
-      <SectionHeading prefix="Latest" highlight="Project" />
+      <SectionHeading prefix="Latest" highlight="Projects" />
 
       <div className="portfolio-container">
         {projects.map((project, index) => (
           <motion.article
             className="portfolio-box"
+            data-tone={project.tone}
             key={project.title}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -23,16 +91,37 @@ export function Portfolio() {
               <h4>{project.title}</h4>
               <p>{project.description}</p>
               <ul className="project-tags" aria-label={`Tecnologias de ${project.title}`}>
-                {project.tags.map((tag) => (
-                  <li key={tag}>{tag}</li>
-                ))}
+                {project.tags.map((tag, tagIndex) => {
+                  const tagClassName = getTagClassName(tag);
+
+                  return (
+                    <li
+                      key={tag}
+                      className={`tag-${tagClassName}${tagIndex === 0 ? " project-tag-primary" : ""}`}
+                    >
+                      <span className="project-tag-icon" aria-hidden="true">
+                        {getTagIcon(tag)}
+                      </span>
+                      <span className="project-tag-label">{tag}</span>
+                    </li>
+                  );
+                })}
+                {project.tags.length > 2 ? (
+                  <li className="project-tags-more" aria-hidden="true">
+                    +{project.tags.length - 2}
+                  </li>
+                ) : null}
               </ul>
               <a
+                className="project-cta"
                 href={project.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Abrir projeto ${project.title}`}
-              />
+              >
+                <span>Ver projeto</span>
+                <ExternalLink aria-hidden="true" />
+              </a>
             </div>
           </motion.article>
         ))}

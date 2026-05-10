@@ -5,7 +5,7 @@ import { SectionHeading } from "./SectionHeading";
 export function Services() {
   return (
     <section className="services" id="services">
-      <SectionHeading prefix="My" highlight="projects" />
+      <SectionHeading prefix="My" highlight="Services" />
 
       <div className="services-container">
         {services.map(({ title, description, Icon }, index) => (

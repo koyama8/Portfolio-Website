@@ -18,6 +18,8 @@ export type Service = {
   Icon: LucideIcon;
 };
 
+export type ProjectTone = "amber" | "cyan" | "emerald" | "blue" | "violet" | "mint";
+
 export type Project = {
   title: string;
   description: string;
@@ -25,4 +27,5 @@ export type Project = {
   imageAlt: string;
   href: string;
   tags: string[];
+  tone: ProjectTone;
 };

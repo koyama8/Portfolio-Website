@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Bot, Brush, ServerCog, ShieldCheck } from "lucide-react";
+import { Bot, Brush, ServerCog } from "lucide-react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import type { NavItem, Project, Service, SocialLink } from "../types";
 import agendaImage from "../../imagens/agenda.png";
@@ -27,36 +27,33 @@ export const profile: {
   aboutParagraphs: ReactNode[];
 } = {
   name: "Matheus Koyama",
-  title: "QA Automation | UX/UI Design",
-  typedRoles: ["Automação", "UX/UI Design", "React + TypeScript"],
+  title: "QA Automation",
+  typedRoles: ["Automação", "UX/UI Design", "REST Assured", "Express", "CI/CD", "Selenium", "Cypress"],
   aboutImage: homeImage,
   intro:
-    "Apaixonado por tecnologia e guiado pela curiosidade criativa, atuo com QA manual, automação de testes e tenho conhecimento em Angular. Também atuo em projetos de UX Design e Interface, conectando performance técnica à experiência do usuário e à acessibilidade.",
+    "Profissional de QA Manual e Automação, focado em testes funcionais, regressivos, E2E, APIs e qualidade de produtos digitais. Também atuo com UX/UI Design, unindo usabilidade, interface e eficiência técnica para criar experiências mais confiáveis.",
   aboutParagraphs: [
     <>
-      Sou um <strong>profissional de QA Manual e Automação</strong>, com ampla experiência na
-      implementação de estratégias de testes para aplicações web e mobile. Trabalho de forma contínua
-      para <strong>garantir a qualidade</strong>, a <strong>acessibilidade</strong> e a{" "}
-      <strong>inclusão</strong> em cada etapa do desenvolvimento, aplicando{" "}
-      <strong>metodologias ágeis</strong> (Scrum e Kanban) e alinhando práticas de{" "}
-      <strong>User Experience (UX)</strong> a testes eficientes.
+      Sou <strong>profissional de QA Manual e Automação</strong>, com experiência na criação de
+      estratégias de testes para aplicações web e APIs. Atuo na análise de requisitos, planejamento de
+      cenários, execução funcional e validação de fluxos com foco em{" "}
+      <strong>qualidade, rastreabilidade, acessibilidade e valor ao usuário</strong>.
     </>,
     <>
-      Para <strong>testes automatizados</strong>, utilizo ferramentas e tecnologias como{" "}
-      <strong>Selenium WebDriver</strong>, <strong>Cypress</strong>, <strong>Postman</strong> e
-      integrações de <strong>CI/CD</strong> (por exemplo, Jenkins, GitHub Actions), criando{" "}
-      <strong>scripts robustos</strong> que cobrem cenários críticos e mantêm a estabilidade do
-      produto.
+      Em automação, trabalho com <strong>Selenium WebDriver</strong>, <strong>Cypress</strong>,{" "}
+      <strong>Postman</strong>, <strong>REST Assured</strong>, JavaScript e Java, estruturando suítes
+      E2E, regressivas e de API para ampliar cobertura, reduzir falhas repetitivas e apoiar pipelines{" "}
+      <strong>CI/CD</strong> com Jenkins, GitHub Actions e boas práticas de versionamento.
     </>,
     <>
-      Atuei em projetos de <strong>UX e UI Design</strong>, desenvolvendo interfaces funcionais e
-      intuitivas com foco em <strong>usabilidade, desempenho e clareza visual</strong>. Utilizei{" "}
-      <strong>Figma</strong>, <strong>Adobe XD</strong> e <strong>Sketch</strong> para criar
-      protótipos e validar soluções com base em dados e testes de usabilidade.
+      Também desenvolvo projetos de <strong>Web Design e UX/UI</strong>, criando interfaces responsivas,
+      funcionais e consistentes. Utilizo Figma, Adobe XD e princípios de usabilidade para organizar
+      jornadas, protótipos e layouts claros, conectando experiência do usuário, performance e identidade
+      visual.
     </>,
     <>
-      Acredito em uma cultura de <strong>aprendizado contínuo</strong>, na qual feedbacks são
-      valorizados e a colaboração é essencial para produzir resultados excepcionais.
+      Valorizo <strong>aprendizado contínuo</strong>, colaboração entre áreas e comunicação clara para
+      transformar testes, automação e design em produtos mais confiáveis, acessíveis e eficientes.
     </>,
   ],
 };
@@ -98,8 +95,9 @@ export const projects: Project[] = [
     imageAlt: "Interface visual do projeto de automação com Java e Selenium",
     href: "https://github.com/koyama8/the-internet-automation",
     tags: ["Java", "Selenium", "QA"],
+    tone: "amber",
     description:
-      "Projeto de automação web com Java e Selenium no site The Internet, desenvolvido para validar cenários reais de QA com boas práticas, organização do código e estrutura escalável.",
+      "Automação web com Java e Selenium no The Internet, validando fluxos reais de QA com boas práticas e estrutura escalável.",
   },
   {
     title: "API QA Lab",
@@ -107,6 +105,7 @@ export const projects: Project[] = [
     imageAlt: "Capa do projeto API QA Lab",
     href: "https://github.com/koyama8/api-qa-lab",
     tags: ["REST Assured", "Cypress", "API"],
+    tone: "cyan",
     description:
       "Projeto de API em contexto bancário, com login, clientes, cartões, faturas e pagamentos, estruturado para testes manuais, automação e futura integração CI/CD.",
   },
@@ -116,6 +115,7 @@ export const projects: Project[] = [
     imageAlt: "Tela do projeto VistaVault",
     href: "https://github.com/koyama8/Moments",
     tags: ["Social", "Privacidade", "Web"],
+    tone: "blue",
     description:
       "Plataforma social intuitiva para compartilhar experiências e momentos especiais com foco em privacidade, controle e experiência de uso.",
   },
@@ -125,6 +125,7 @@ export const projects: Project[] = [
     imageAlt: "Tela do projeto Agendadify",
     href: "https://github.com/koyama8/Indexa",
     tags: ["CRUD", "Forms", "Web"],
+    tone: "emerald",
     description:
       "Agenda digital para gestão completa de contatos por meio de CRUD, formulários com validações, descrições e imagens.",
   },
@@ -134,6 +135,7 @@ export const projects: Project[] = [
     imageAlt: "Mockup visual do projeto Mordida Express",
     href: "https://rebrand.ly/Mordida-Express-Food",
     tags: ["UX", "UI", "Figma"],
+    tone: "violet",
     description:
       "Projeto de UX Design para aplicativo de lanches, com prototipagem responsiva e mais de 60 templates desenvolvidos.",
   },
@@ -143,6 +145,7 @@ export const projects: Project[] = [
     imageAlt: "Tela do projeto Gooday",
     href: "https://www.figma.com/proto/6h9yZA0DRuep2QHolsxpQ9/Gooday?node-id=2-2&t=eJJJO9hbSxJhZ07c-1",
     tags: ["Bem-estar", "UX/UI", "Prototype"],
+    tone: "mint",
     description:
       "Plataforma digital de UX/UI focada em bem-estar, alimentação equilibrada, atividades físicas, saúde e eventos.",
   },
@@ -158,9 +161,4 @@ export const contact = {
 
 export const footer = {
   copyright: "Copyright © 2026 by Koyama | All Rights Reserved.",
-};
-
-export const qualityBadge = {
-  Icon: ShieldCheck,
-  label: "QA, acessibilidade e experiência conectadas em uma base moderna com React + TypeScript.",
 };
