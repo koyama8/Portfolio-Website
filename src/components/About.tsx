@@ -1,18 +1,21 @@
 import { motion } from "framer-motion";
 import { profile } from "../data/portfolio";
+import { AutomationPanel } from "./AutomationPanel";
 import { SectionHeading } from "./SectionHeading";
 
 export function About() {
+  const summaryParagraphs = profile.aboutParagraphs.slice(0, 3);
+
   return (
     <section className="about" id="about">
       <motion.div
-        className="about-img"
+        className="about-automation"
         initial={{ opacity: 0, x: -32 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, amount: 0.35 }}
         transition={{ duration: 0.65, ease: "easeOut" }}
       >
-        <img src={profile.aboutImage} alt="Matheus Koyama em imagem de perfil do portfólio" />
+        <AutomationPanel className="about-automation-panel" />
       </motion.div>
 
       <motion.div
@@ -26,18 +29,13 @@ export function About() {
         <h3>{profile.title}</h3>
 
         <div className="about-copy">
-          {profile.aboutParagraphs.map((paragraph, index) => (
+          {summaryParagraphs.map((paragraph, index) => (
             <p key={index}>{paragraph}</p>
           ))}
         </div>
 
-        <a
-          href="https://www.linkedin.com/in/matheuskoyama/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn"
-        >
-          Read More
+        <a href="#contact" className="btn about-read-more">
+          Vamos conversar
         </a>
       </motion.div>
     </section>
