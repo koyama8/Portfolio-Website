@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
+import automationQaImage from "../../imagens/automa-qa.png";
 import { profile } from "../data/portfolio";
-import { AutomationPanel } from "./AutomationPanel";
 import { SectionHeading } from "./SectionHeading";
 
 export function About() {
@@ -9,13 +9,15 @@ export function About() {
   return (
     <section className="about" id="about">
       <motion.div
-        className="about-automation"
+        className="about-visual"
         initial={{ opacity: 0, x: -32 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, amount: 0.35 }}
         transition={{ duration: 0.65, ease: "easeOut" }}
       >
-        <AutomationPanel className="about-automation-panel" />
+        <div className="about-visual-card">
+          <img src={automationQaImage} alt="Código de automação de testes em ambiente digital" />
+        </div>
       </motion.div>
 
       <motion.div
