@@ -16,7 +16,7 @@ import {
   Workflow,
 } from "lucide-react";
 import { FaJava } from "react-icons/fa";
-import { SiCypress, SiFigma, SiOpenapiinitiative, SiSelenium } from "react-icons/si";
+import { SiCypress, SiFigma, SiNodedotjs, SiOpenapiinitiative, SiSelenium } from "react-icons/si";
 import { projects } from "../data/portfolio";
 import { SectionHeading } from "./SectionHeading";
 
@@ -36,10 +36,14 @@ const getTagIcon = (tag: string) => {
       return <SiSelenium />;
     case "cypress":
       return <SiCypress />;
+    case "node-js":
+      return <SiNodedotjs />;
     case "rest-assured":
       return <SiOpenapiinitiative />;
     case "api":
       return <ServerCog />;
+    case "e2e":
+      return <Workflow />;
     case "qa":
       return <ShieldCheck />;
     case "social":

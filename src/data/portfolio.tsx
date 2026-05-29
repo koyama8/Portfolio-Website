@@ -8,7 +8,7 @@ import automationImage from "../../imagens/automation.jpg";
 import designImage from "../../imagens/design.jpg";
 import goodayImage from "../../imagens/Gooday.png";
 import homeImage from "../../imagens/home_2.png";
-import vistaVaultImage from "../../imagens/VistaVault.png";
+import playwrightImage from "../../imagens/Playwright.png";
 
 export const navItems: NavItem[] = [
   { label: "Home", href: "#home" },
@@ -72,19 +72,19 @@ export const services: Service[] = [
     title: "Test Automation",
     Icon: Bot,
     description:
-      "Automação de testes para aplicações web com foco em cobertura, estabilidade e qualidade contínua. Desenvolvimento de suítes E2E e regressivas com Selenium, Cypress, Java, JavaScript e integração em pipelines CI/CD, validando fluxos críticos em múltiplos navegadores e dispositivos.",
+      "Automação de testes web e mobile com foco em cobertura, estabilidade e qualidade contínua. Desenvolvimento de suítes E2E e regressivas com Selenium WebDriver, Cypress, Playwright, Java, JavaScript e TypeScript, integradas a CI/CD para validar fluxos reais em múltiplos navegadores.",
   },
   {
     title: "API Quality",
     Icon: ServerCog,
     description:
-      "Testes e validações de APIs REST com foco em confiabilidade, contratos, status codes, autenticação, payloads e regras de negócio. Experiência com Postman, Bruno, REST Assured, Cypress API, Express, Java, JavaScript e execução automatizada em CI/CD.",
+      "Testes e validações de APIs REST com foco em contratos, status codes, autenticação, payloads e regras de negócio. Experiência com Postman, REST Assured, Cypress API, Express, JavaScript, Docker, PostgreSQL e execução via CI/CD com evidências reais.",
   },
   {
     title: "Web & UI Design",
     Icon: Brush,
     description:
-      "Desenvolvimento de identidades visuais, web design e interfaces digitais com foco em clareza, usabilidade e consistência visual. Criação de layouts responsivos, protótipos, design systems e experiências centradas no usuário com Figma, Adobe XD e princípios de acessibilidade.",
+      "Desenho de interfaces digitais com foco em clareza, usabilidade, acessibilidade e consistência visual. Criação de layouts responsivos, protótipos, jornadas e validações UX/UI com Figma e Adobe XD, conectando experiência do usuário, performance e qualidade em produto digital.",
   },
 ];
 
@@ -110,14 +110,14 @@ export const projects: Project[] = [
       "Laboratório de QA Automation com testes de API e automação Web, usando REST Assured, Cypress, PostgreSQL, Docker e CI/CD com evidências no Cypress Cloud.",
   },
   {
-    title: "VistaVault",
-    image: vistaVaultImage,
-    imageAlt: "Tela do projeto VistaVault",
-    href: "https://github.com/koyama8/Moments",
-    tags: ["Social", "Privacidade", "Web"],
-    tone: "blue",
+    title: "Preview Out",
+    image: playwrightImage,
+    imageAlt: "Capa do projeto Preview Out com automação Playwright",
+    href: "#",
+    tags: ["Playwright", "Node.js", "E2E", "API"],
+    tone: "gold",
     description:
-      "Plataforma social intuitiva para compartilhar experiências e momentos especiais com foco em privacidade, controle e experiência de uso.",
+      "Automação E2E com Playwright para fluxos web integrados à API e banco de dados, usando Page Objects, massa de testes, Docker e relatórios em nuvem.",
   },
   {
     title: "Agendadify",

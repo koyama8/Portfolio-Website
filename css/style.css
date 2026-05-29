@@ -2378,6 +2378,15 @@ span {
     --project-ink: #06182b;
 }
 
+.portfolio-container .portfolio-box[data-tone="gold"] {
+    --project-accent: 255, 202, 74;
+    --project-accent-2: 255, 95, 72;
+    --project-cta-start: #fff7cf;
+    --project-cta-mid: #ffca4a;
+    --project-cta-end: #ff8f2f;
+    --project-ink: #241404;
+}
+
 .portfolio-container .portfolio-box[data-tone="violet"] {
     --project-accent: 196, 154, 255;
     --project-accent-2: 255, 138, 216;
@@ -4172,10 +4181,26 @@ span {
     --tag-accent: 22, 224, 143;
 }
 
+.portfolio-layer .project-tags .tag-playwright {
+    --tag-accent: 255, 202, 74;
+}
+
+.portfolio-layer .project-tags .tag-node-js {
+    --tag-accent: 22, 224, 143;
+}
+
 .portfolio-layer .project-tags .tag-qa,
 .portfolio-layer .project-tags .tag-api,
 .portfolio-layer .project-tags .tag-rest-assured {
     --tag-accent: 69, 231, 255;
+}
+
+.portfolio-layer .project-tags .tag-e2e {
+    --tag-accent: 255, 95, 72;
+}
+
+.portfolio-layer .project-tags .tag-api {
+    --tag-accent: 255, 95, 72;
 }
 
 .portfolio-layer .project-tags .tag-social,
