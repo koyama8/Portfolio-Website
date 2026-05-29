@@ -104,10 +104,10 @@ export const projects: Project[] = [
     image: apiQaImage,
     imageAlt: "Capa do projeto API QA Lab",
     href: "https://github.com/koyama8/api-qa-lab",
-    tags: ["REST Assured", "Cypress", "API"],
+    tags: ["REST Assured", "Cypress", "API", "Playwright"],
     tone: "cyan",
     description:
-      "Projeto de API em contexto bancário, com login, clientes, cartões, faturas e pagamentos, estruturado para testes manuais, automação e futura integração CI/CD.",
+      "Laboratório QA Automation com testes de API, Cypress Web/API, PostgreSQL, Docker e CI/CD com evidências públicas.",
   },
   {
     title: "VistaVault",
