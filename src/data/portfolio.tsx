@@ -28,28 +28,28 @@ export const profile: {
 } = {
   name: "Matheus Koyama",
   title: "QA Automation",
-  typedRoles: ["Automação", "UX/UI Design", "REST Assured", "Express", "CI/CD", "Selenium", "Cypress"],
+  typedRoles: ["Automação", "UX/UI Design", "REST Assured", "Express", "CI/CD", "Selenium", "Cypress", "Playwright"],
   aboutImage: homeImage,
   intro:
     "Transformo requisitos em testes claros, automações confiáveis e validações E2E para web, APIs e UX/UI. Meu foco é antecipar falhas, dar confiança às entregas e conectar qualidade técnica à experiência do usuário.",
   aboutParagraphs: [
     <>
-      Sou <strong>profissional de QA Manual e Automação</strong>, com experiência na criação de
-      estratégias de testes para aplicações web e APIs. Atuo na análise de requisitos, planejamento de
-      cenários, execução funcional e validação de fluxos com foco em{" "}
-      <strong>qualidade, rastreabilidade, acessibilidade e valor ao usuário</strong>.
+      Sou <strong>profissional de QA Manual e QA Automation</strong>, com experiência em produtos digitais,
+      fluxos web, mobile e APIs. Atuo na análise de requisitos, critérios de aceite, estratégias de testes e
+      validação de jornadas críticas, transformando regras de negócio em cenários claros, rastreáveis e
+      orientados à qualidade e valor ao usuário.
     </>,
     <>
-      Em automação, trabalho com <strong>Selenium WebDriver</strong>, <strong>Cypress</strong>,{" "}
-      <strong>Postman</strong>, <strong>REST Assured</strong>, JavaScript e Java, estruturando suítes
-      E2E, regressivas e de API para ampliar cobertura, reduzir falhas repetitivas e apoiar pipelines{" "}
-      <strong>CI/CD</strong> com Jenkins, GitHub Actions e boas práticas de versionamento.
+      Na automação de testes, estruturo suítes E2E, regressivas e de API com{" "}
+      <strong>Selenium WebDriver</strong>, <strong>Cypress Web/API</strong>, <strong>Playwright</strong>,{" "}
+      <strong>REST Assured</strong>, <strong>Postman</strong>, Java, JavaScript e TypeScript, aplicando boas
+      práticas de arquitetura, versionamento, evidências e execução contínua.
     </>,
     <>
-      Também desenvolvo projetos de <strong>Web Design e UX/UI</strong>, criando interfaces responsivas,
-      funcionais e consistentes. Utilizo Figma, Adobe XD e princípios de usabilidade para organizar
-      jornadas, protótipos e layouts claros, conectando experiência do usuário, performance e identidade
-      visual.
+      Tenho vivência com <strong>Docker</strong>, <strong>PostgreSQL</strong>, GitHub Actions, Cypress
+      Cloud e pipelines <strong>CI/CD</strong>, conectando automação, evidências técnicas e qualidade de
+      entrega. Minha experiência em <strong>UX Design</strong>, Figma e Adobe XD apoia validações de
+      usabilidade, acessibilidade e interfaces responsivas.
     </>,
     <>
       Valorizo <strong>aprendizado contínuo</strong>, colaboração entre áreas e comunicação clara para
@@ -104,10 +104,10 @@ export const projects: Project[] = [
     image: apiQaImage,
     imageAlt: "Capa do projeto API QA Lab",
     href: "https://github.com/koyama8/api-qa-lab",
-    tags: ["REST Assured", "Cypress", "API", "Playwright"],
+    tags: ["REST Assured", "Cypress", "API"],
     tone: "cyan",
     description:
-      "Laboratório QA Automation com testes de API, Cypress Web/API, PostgreSQL, Docker e CI/CD com evidências públicas.",
+      "Laboratório de QA Automation com testes de API e automação Web, usando REST Assured, Cypress, PostgreSQL, Docker e CI/CD com evidências no Cypress Cloud.",
   },
   {
     title: "VistaVault",
