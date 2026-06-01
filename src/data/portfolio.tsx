@@ -113,7 +113,7 @@ export const projects: Project[] = [
     title: "Preview Out",
     image: playwrightImage,
     imageAlt: "Capa do projeto Preview Out com automação Playwright",
-    href: "#",
+    href: "https://github.com/koyama8/playwright-web-api-lab",
     tags: ["Playwright", "Node.js", "E2E", "API"],
     tone: "gold",
     description:
