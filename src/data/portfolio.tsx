@@ -123,6 +123,7 @@ export const projects: Project[] = [
     title: "Automation Hub",
     image: automationHubImage,
     imageAlt: "Tela do projeto Automation Hub com formulário de acesso QA Automation Lab",
+    href: "https://github.com/koyama8/automation-hub",
     description:
       "Projeto criado para organizar fluxos de automação QA, validar telas web e praticar cenários reais com Cypress, Playwright, API e evidências usando dados locais.",
     tags: ["Cypress", "Playwright", "API"],
