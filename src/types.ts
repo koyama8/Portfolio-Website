@@ -23,9 +23,10 @@ export type ProjectTone = "amber" | "cyan" | "emerald" | "blue" | "violet" | "mi
 export type Project = {
   title: string;
   description: string;
-  image: string;
-  imageAlt: string;
-  href: string;
+  image?: string;
+  imageAlt?: string;
+  href?: string;
   tags: string[];
   tone: ProjectTone;
+  isPlaceholder?: boolean;
 };

@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { Bot, Brush, ServerCog } from "lucide-react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import type { NavItem, Project, Service, SocialLink } from "../types";
-import agendaImage from "../../imagens/agenda.png";
+import automationHubImage from "../../imagens/automation-hub.png";
 import apiQaImage from "../../imagens/api-qa.png";
 import automationImage from "../../imagens/automation.jpg";
 import designImage from "../../imagens/design.jpg";
@@ -31,7 +31,7 @@ export const profile: {
   typedRoles: ["Automação", "UX/UI Design", "REST Assured", "Express", "CI/CD", "Selenium", "Cypress", "Playwright"],
   aboutImage: homeImage,
   intro:
-    "Transformo requisitos em testes claros, automações confiáveis e validações E2E para web, APIs e UX/UI. Meu foco é antecipar falhas, dar confiança às entregas e conectar qualidade técnica à experiência do usuário.",
+    "Aqui você encontra meus projetos de automação, testes E2E para web e APIs, estudos de UX/UI e soluções voltadas à qualidade. Meu foco é criar validações confiáveis e conectar tecnologia à experiência do usuário.",
   aboutParagraphs: [
     <>
       Sou <strong>profissional de QA Manual e QA Automation</strong>, com experiência em produtos digitais,
@@ -120,14 +120,13 @@ export const projects: Project[] = [
       "Automação E2E com Playwright para fluxos web integrados à API e banco de dados, usando Page Objects, massa de testes, Docker e relatórios em nuvem.",
   },
   {
-    title: "Agendadify",
-    image: agendaImage,
-    imageAlt: "Tela do projeto Agendadify",
-    href: "https://github.com/koyama8/Indexa",
-    tags: ["CRUD", "Forms", "Web"],
-    tone: "emerald",
+    title: "Automation Hub",
+    image: automationHubImage,
+    imageAlt: "Tela do projeto Automation Hub com formulário de acesso QA Automation Lab",
     description:
-      "Agenda digital para gestão completa de contatos por meio de CRUD, formulários com validações, descrições e imagens.",
+      "Projeto criado para organizar fluxos de automação QA, validar telas web e praticar cenários reais com Cypress, Playwright, API e evidências usando dados locais.",
+    tags: ["Cypress", "Playwright", "API"],
+    tone: "emerald",
   },
   {
     title: "Mordida Express",

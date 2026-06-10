@@ -4,6 +4,7 @@ import {
   Database,
   ExternalLink,
   FileText,
+  FolderPlus,
   Globe,
   HeartPulse,
   LockKeyhole,
@@ -79,56 +80,82 @@ export function Portfolio() {
       <SectionHeading prefix="Latest" highlight="Projects" />
 
       <div className="portfolio-container">
-        {projects.map((project, index) => (
-          <motion.article
-            className="portfolio-box"
-            data-tone={project.tone}
-            key={project.title}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.55, delay: index * 0.06, ease: "easeOut" }}
-          >
-            <img src={project.image} alt={project.imageAlt} loading="lazy" decoding="async" />
+        {projects.map((project, index) => {
+          const isPlaceholder = project.isPlaceholder;
 
-            <div className="portfolio-layer">
-              <h4>{project.title}</h4>
-              <p>{project.description}</p>
-              <ul className="project-tags" aria-label={`Tecnologias de ${project.title}`}>
-                {project.tags.map((tag, tagIndex) => {
-                  const tagClassName = getTagClassName(tag);
+          return (
+            <motion.article
+              className={`portfolio-box${isPlaceholder ? " portfolio-box-placeholder" : ""}`}
+              data-tone={project.tone}
+              key={project.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.55, delay: index * 0.06, ease: "easeOut" }}
+            >
+              {isPlaceholder ? (
+                <div className="portfolio-placeholder-visual" aria-hidden="true">
+                  <FolderPlus />
+                </div>
+              ) : (
+                <img
+                  src={project.image ?? ""}
+                  alt={project.imageAlt ?? project.title}
+                  loading="lazy"
+                  decoding="async"
+                />
+              )}
 
-                  return (
-                    <li
-                      key={tag}
-                      className={`tag-${tagClassName}${tagIndex === 0 ? " project-tag-primary" : ""}`}
-                    >
-                      <span className="project-tag-icon" aria-hidden="true">
-                        {getTagIcon(tag)}
-                      </span>
-                      <span className="project-tag-label">{tag}</span>
-                    </li>
-                  );
-                })}
-                {project.tags.length > 2 ? (
-                  <li className="project-tags-more" aria-hidden="true">
-                    +{project.tags.length - 2}
-                  </li>
+              <div className="portfolio-layer">
+                {isPlaceholder ? (
+                  <span className="portfolio-placeholder-icon" aria-hidden="true">
+                    <FolderPlus />
+                  </span>
                 ) : null}
-              </ul>
-              <a
-                className="project-cta"
-                href={project.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Abrir projeto ${project.title}`}
-              >
-                <span>Ver projeto</span>
-                <ExternalLink aria-hidden="true" />
-              </a>
-            </div>
-          </motion.article>
-        ))}
+                <h4>{project.title}</h4>
+                <p>{project.description}</p>
+                {!isPlaceholder ? (
+                  <>
+                    <ul className="project-tags" aria-label={`Tecnologias de ${project.title}`}>
+                      {project.tags.map((tag, tagIndex) => {
+                        const tagClassName = getTagClassName(tag);
+
+                        return (
+                          <li
+                            key={tag}
+                            className={`tag-${tagClassName}${tagIndex === 0 ? " project-tag-primary" : ""}`}
+                          >
+                            <span className="project-tag-icon" aria-hidden="true">
+                              {getTagIcon(tag)}
+                            </span>
+                            <span className="project-tag-label">{tag}</span>
+                          </li>
+                        );
+                      })}
+                      {project.tags.length > 2 ? (
+                        <li className="project-tags-more" aria-hidden="true">
+                          +{project.tags.length - 2}
+                        </li>
+                      ) : null}
+                    </ul>
+                    {project.href ? (
+                      <a
+                        className="project-cta"
+                        href={project.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Abrir projeto ${project.title}`}
+                      >
+                        <span>Ver projeto</span>
+                        <ExternalLink aria-hidden="true" />
+                      </a>
+                    ) : null}
+                  </>
+                ) : null}
+              </div>
+            </motion.article>
+          );
+        })}
       </div>
     </section>
   );

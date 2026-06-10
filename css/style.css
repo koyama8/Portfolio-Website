@@ -2470,6 +2470,31 @@ span {
     filter: brightness(.52) saturate(1.14) contrast(1.08);
 }
 
+.portfolio-box-placeholder {
+    background:
+        radial-gradient(circle at 50% 38%, rgba(var(--project-accent), .18), rgba(var(--project-accent), 0) 34%),
+        linear-gradient(145deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .015));
+}
+
+.portfolio-placeholder-visual {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(var(--project-accent), .28);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .015)),
+        linear-gradient(135deg, rgba(var(--project-accent), .16), rgba(6, 15, 24, .78));
+}
+
+.portfolio-placeholder-visual svg {
+    width: 8.4rem;
+    height: 8.4rem;
+    stroke-width: 1.5;
+    filter: drop-shadow(0 0 2.2rem rgba(var(--project-accent), .22));
+}
+
 .portfolio-box .portfolio-layer {
     position: absolute;
     inset: 0;
@@ -2493,6 +2518,43 @@ span {
         transform .55s cubic-bezier(.22, .61, .36, 1),
         opacity .42s ease;
     z-index: 2;
+}
+
+.portfolio-box-placeholder .portfolio-layer {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background:
+        linear-gradient(180deg, rgba(6, 10, 16, .18), rgba(8, 15, 22, .64) 56%, rgba(12, 24, 32, .92) 100%),
+        linear-gradient(135deg, rgba(var(--project-accent), .18), rgba(var(--project-accent), 0) 48%);
+    opacity: 1;
+    transform: none;
+}
+
+.portfolio-placeholder-icon {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 5.2rem;
+    height: 5.2rem;
+    border: .1rem solid rgba(var(--project-accent), .34);
+    border-radius: 1.6rem;
+    background:
+        radial-gradient(circle at 35% 25%, rgba(255, 255, 255, .24), rgba(255, 255, 255, 0) 48%),
+        rgba(var(--project-accent), .14);
+    color: rgb(var(--project-accent));
+    box-shadow:
+        0 1rem 2rem rgba(var(--project-accent), .12),
+        inset 0 .1rem 0 rgba(255, 255, 255, .16);
+    filter: none;
+}
+
+.portfolio-placeholder-icon svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    stroke-width: 2;
 }
 
 .portfolio-box .portfolio-layer::before {
@@ -2553,6 +2615,12 @@ span {
     line-height: 1.68;
     margin: 0;
     color: rgba(255, 255, 255, .84);
+}
+
+.portfolio-box-placeholder .portfolio-layer h4,
+.portfolio-box-placeholder .portfolio-layer p {
+    opacity: 1;
+    transform: none;
 }
 
 .portfolio-layer .project-cta {
