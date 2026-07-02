@@ -1085,6 +1085,12 @@ span {
     transform: scale(1.01);
 }
 
+.home-photo-card img.home-carousel-image {
+    position: absolute;
+    inset: 0;
+    will-change: opacity, transform;
+}
+
 .home-photo-glow {
     position: absolute;
     left: 14%;

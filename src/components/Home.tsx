@@ -1,7 +1,10 @@
+import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
-import { profile } from "../data/portfolio";
+import { AnimatePresence, motion } from "framer-motion";
+import { homeHeroSlides, profile } from "../data/portfolio";
 import { useTypewriter } from "../hooks/useTypewriter";
+
+const HOME_SLIDE_INTERVAL_MS = 10000;
 
 export function Home() {
   const typedRole = useTypewriter(profile.typedRoles, {
@@ -9,6 +12,23 @@ export function Home() {
     backSpeed: 80,
     backDelay: 1100,
   });
+  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+  const activeSlide = homeHeroSlides[activeSlideIndex] ?? {
+    src: profile.aboutImage,
+    alt: "Imagem de perfil de Matheus Koyama",
+  };
+
+  useEffect(() => {
+    if (homeHeroSlides.length <= 1) {
+      return undefined;
+    }
+
+    const intervalId = window.setInterval(() => {
+      setActiveSlideIndex((currentIndex) => (currentIndex + 1) % homeHeroSlides.length);
+    }, HOME_SLIDE_INTERVAL_MS);
+
+    return () => window.clearInterval(intervalId);
+  }, []);
 
   return (
     <section className="home" id="home">
@@ -38,13 +58,24 @@ export function Home() {
 
       <motion.div
         className="home-visual home-profile-visual"
-        aria-label="Imagem de perfil de Matheus Koyama"
+        aria-label="Galeria de imagens de automação QA"
         initial={{ opacity: 0, x: 28, scale: 0.96 }}
         animate={{ opacity: 1, x: 0, scale: 1 }}
         transition={{ duration: 0.7, delay: 0.12, ease: "easeOut" }}
       >
         <div className="home-photo-card">
-          <img src={profile.aboutImage} alt="Matheus Koyama sorrindo" />
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={activeSlide.src}
+              className="home-carousel-image"
+              src={activeSlide.src}
+              alt={activeSlide.alt}
+              initial={{ opacity: 0, scale: 1.045 }}
+              animate={{ opacity: 1, scale: 1.01 }}
+              exit={{ opacity: 0, scale: 0.99 }}
+              transition={{ duration: 0.75, ease: "easeOut" }}
+            />
+          </AnimatePresence>
           <span className="home-photo-glow" aria-hidden="true" />
         </div>
       </motion.div>
