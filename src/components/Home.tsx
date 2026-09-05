@@ -1,84 +1,45 @@
-import { useEffect, useState } from "react";
-import { ArrowRight } from "lucide-react";
-import { AnimatePresence, motion } from "framer-motion";
-import { homeHeroSlides, profile } from "../data/portfolio";
-import { useTypewriter } from "../hooks/useTypewriter";
+import { ArrowDown, ArrowRight, BarChart3, Check, Sparkles, Trophy, Users, Zap } from "lucide-react";
+import { motion } from "framer-motion";
+import { projects } from "../data/portfolio";
+import { TechnologyExplorer } from "./home/TechnologyExplorer";
 
-const HOME_SLIDE_INTERVAL_MS = 10000;
+const competencies = ["Testes Web e APIs", "Frameworks e CI/CD", "Foco em qualidade"];
+const stats = [
+  { value: `${projects.length}`, label: "Projetos de automação", Icon: Trophy },
+  { value: "100%", label: "Foco em qualidade", Icon: Users },
+  { value: "5", label: "Tecnologias principais", Icon: BarChart3 },
+  { value: "Sempre", label: "Em aprendizado", Icon: Zap },
+];
 
 export function Home() {
-  const typedRole = useTypewriter(profile.typedRoles, {
-    typeSpeed: 100,
-    backSpeed: 80,
-    backDelay: 1100,
-  });
-  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
-  const activeSlide = homeHeroSlides[activeSlideIndex] ?? {
-    src: profile.aboutImage,
-    alt: "Imagem de perfil de Matheus Koyama",
-  };
-
-  useEffect(() => {
-    if (homeHeroSlides.length <= 1) {
-      return undefined;
-    }
-
-    const intervalId = window.setInterval(() => {
-      setActiveSlideIndex((currentIndex) => (currentIndex + 1) % homeHeroSlides.length);
-    }, HOME_SLIDE_INTERVAL_MS);
-
-    return () => window.clearInterval(intervalId);
-  }, []);
-
   return (
-    <section className="home" id="home">
-      <motion.div
-        className="home-content"
-        initial={{ opacity: 0, x: -24 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.65, ease: "easeOut" }}
-      >
-        <h3>Bem-vindo, eu sou</h3>
-        <h1>{profile.name}.</h1>
-        <h3>
-          <span className="multiple-text" aria-live="polite">
-            {typedRole}
-          </span>
-        </h3>
+    <section className="home home-redesign" id="home">
+      <div className="home-hero-layout">
+        <motion.div className="home-intro" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, ease: "easeOut" }}>
+          <span className="availability-badge"><i aria-hidden="true" />Disponível para oportunidades</span>
+          <h1>Qualidade que <span>Impulsiona Produtos.</span></h1>
+          <p>Sou Matheus Koyama, especialista em automação de testes, com foco em soluções que garantem qualidade, confiabilidade e melhor experiência para o usuário.</p>
+          <ul className="home-competencies" aria-label="Principais competências">
+            {competencies.map((item) => <li key={item}><Check aria-hidden="true" />{item}</li>)}
+          </ul>
+          <div className="home-actions" aria-label="Ações principais">
+            <a className="home-action-primary" href="#portfolio">Ver meus projetos <ArrowRight aria-hidden="true" /></a>
+            <a className="home-action-secondary" href="#contact">Vamos conversar <ArrowDown aria-hidden="true" /></a>
+          </div>
+        </motion.div>
 
-        <p className="whitespace-nowrap">{profile.intro}</p>
+        <motion.div className="home-explorer-wrap" initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.08, ease: "easeOut" }}>
+          <span className="explorer-label"><Sparkles aria-hidden="true" />Stack em destaque</span>
+          <TechnologyExplorer />
+        </motion.div>
+      </div>
 
-        <div className="home-actions" aria-label="Ações principais">
-          <a className="home-action-primary" href="#contact">
-            Conectar comigo
-            <ArrowRight aria-hidden="true" />
-          </a>
+      <div className="home-proof">
+        <div className="home-stats">
+          {stats.map(({ value, label, Icon }) => <div className="home-stat" key={label}><Icon aria-hidden="true" /><div><strong>{value}</strong><span>{label}</span></div></div>)}
         </div>
-      </motion.div>
-
-      <motion.div
-        className="home-visual home-profile-visual"
-        aria-label="Galeria de imagens de automação QA"
-        initial={{ opacity: 0, x: 28, scale: 0.96 }}
-        animate={{ opacity: 1, x: 0, scale: 1 }}
-        transition={{ duration: 0.7, delay: 0.12, ease: "easeOut" }}
-      >
-        <div className="home-photo-card">
-          <AnimatePresence mode="wait">
-            <motion.img
-              key={activeSlide.src}
-              className="home-carousel-image"
-              src={activeSlide.src}
-              alt={activeSlide.alt}
-              initial={{ opacity: 0, scale: 1.045 }}
-              animate={{ opacity: 1, scale: 1.01 }}
-              exit={{ opacity: 0, scale: 0.99 }}
-              transition={{ duration: 0.75, ease: "easeOut" }}
-            />
-          </AnimatePresence>
-          <span className="home-photo-glow" aria-hidden="true" />
-        </div>
-      </motion.div>
+        <blockquote>“Testar não é apenas encontrar erros, mas construir confiança.”</blockquote>
+      </div>
     </section>
   );
 }

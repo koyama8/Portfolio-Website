@@ -1,4 +1,4 @@
-import { Menu, X } from "lucide-react";
+import { ArrowRight, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { navItems, socialLinks } from "../data/portfolio";
 import { useActiveSection } from "../hooks/useActiveSection";
@@ -29,7 +29,8 @@ export function Header() {
   return (
     <header className={`header${isSticky ? " sticky" : ""}`}>
       <a href="#home" className="logo" aria-label="Voltar para o início">
-        Portfolio
+        <span className="brand-monogram">MK</span>
+        <span className="brand-copy"><strong>Matheus Koyama</strong><small>QA Automation Engineer</small></span>
       </a>
 
       <button
@@ -59,6 +60,16 @@ export function Header() {
             </a>
           );
         })}
+        <div className="mobile-nav-actions">
+          {headerSocialLinks.map(({ label, href, Icon }) => (
+            <a key={href} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}>
+              <Icon aria-hidden="true" />
+            </a>
+          ))}
+          <a className="header-connect" href="#contact" onClick={() => setIsMenuOpen(false)}>
+            Vamos conversar <ArrowRight aria-hidden="true" />
+          </a>
+        </div>
       </nav>
 
       <div className="header-actions" aria-label="Ações rápidas">
@@ -68,7 +79,7 @@ export function Header() {
           </a>
         ))}
         <a className="header-connect" href="#contact">
-          Conectar comigo
+          Vamos conversar <ArrowRight aria-hidden="true" />
         </a>
       </div>
     </header>
