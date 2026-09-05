@@ -2771,6 +2771,10 @@ span {
     outline-offset: .28rem;
 }
 
+.portfolio-layer .project-cta-disabled {
+    cursor: default;
+}
+
 @media (max-width: 1200px) {
     .portfolio-container {
         gap: 2.4rem;
@@ -4259,6 +4263,18 @@ span {
     --tag-accent: 255, 202, 74;
 }
 
+.portfolio-layer .project-tags .tag-k6 {
+    --tag-accent: 126, 87, 194;
+}
+
+.portfolio-layer .project-tags .tag-lighthouse {
+    --tag-accent: 249, 171, 44;
+}
+
+.portfolio-layer .project-tags .tag-seguranca {
+    --tag-accent: 255, 95, 72;
+}
+
 .portfolio-layer .project-tags .tag-node-js {
     --tag-accent: 22, 224, 143;
 }
@@ -4311,6 +4327,58 @@ span {
     background:
         radial-gradient(circle at 35% 25%, rgba(255, 255, 255, .44), rgba(255, 255, 255, 0) 48%),
         rgba(var(--tag-accent), .22);
+}
+
+.portfolio-box-dense .portfolio-layer {
+    transform: none;
+}
+
+.portfolio-container .portfolio-box-dense:hover,
+.portfolio-container .portfolio-box-dense:nth-child(2n):hover,
+.portfolio-container .portfolio-box-dense:focus-within {
+    transform: translateY(-.6rem);
+}
+
+.portfolio-container .portfolio-box-dense::after {
+    display: none;
+}
+
+@media (max-width: 1399px) {
+    .portfolio-box-dense .portfolio-layer {
+        gap: .5rem;
+        padding: 1.2rem 1.5rem 1.4rem;
+    }
+
+    .portfolio-box-dense .portfolio-layer h4 {
+        font-size: 2.35rem;
+    }
+
+    .portfolio-box-dense .portfolio-layer p {
+        font-size: 1.18rem;
+        line-height: 1.42;
+    }
+
+    .portfolio-box-dense .portfolio-layer .project-tags {
+        gap: .48rem;
+    }
+
+    .portfolio-box-dense .portfolio-layer .project-tags li {
+        min-height: 2.5rem;
+        padding: .36rem .66rem .36rem .46rem;
+        font-size: .94rem;
+    }
+
+    .portfolio-box-dense .portfolio-layer .project-tags .project-tag-icon {
+        width: 1.32rem;
+        height: 1.32rem;
+    }
+
+    .portfolio-box-dense .portfolio-layer .project-cta {
+        min-height: 3.35rem;
+        padding: .45rem 1rem .45rem 1.15rem;
+        font-size: 1.02rem;
+        margin-top: 0;
+    }
 }
 
 .portfolio-box:hover .portfolio-layer .project-tags,

@@ -17,7 +17,16 @@ import {
   Workflow,
 } from "lucide-react";
 import { FaJava } from "react-icons/fa";
-import { SiCypress, SiFigma, SiNodedotjs, SiOpenapiinitiative, SiSelenium } from "react-icons/si";
+import {
+  SiCypress,
+  SiFigma,
+  SiK6,
+  SiLighthouse,
+  SiNodedotjs,
+  SiOpenapiinitiative,
+  SiOwasp,
+  SiSelenium,
+} from "react-icons/si";
 import { projects } from "../data/portfolio";
 import { SectionHeading } from "./SectionHeading";
 
@@ -37,6 +46,12 @@ const getTagIcon = (tag: string) => {
       return <SiSelenium />;
     case "cypress":
       return <SiCypress />;
+    case "k6":
+      return <SiK6 />;
+    case "lighthouse":
+      return <SiLighthouse />;
+    case "seguranca":
+      return <SiOwasp />;
     case "node-js":
       return <SiNodedotjs />;
     case "rest-assured":
@@ -82,10 +97,11 @@ export function Portfolio() {
       <div className="portfolio-container">
         {projects.map((project, index) => {
           const isPlaceholder = project.isPlaceholder;
+          const isDense = project.tags.length > 4 || project.title.length > 20;
 
           return (
             <motion.article
-              className={`portfolio-box${isPlaceholder ? " portfolio-box-placeholder" : ""}`}
+              className={`portfolio-box${isPlaceholder ? " portfolio-box-placeholder" : ""}${isDense ? " portfolio-box-dense" : ""}`}
               data-tone={project.tone}
               key={project.title}
               initial={{ opacity: 0, y: 30 }}
@@ -149,7 +165,16 @@ export function Portfolio() {
                         <span>Ver projeto</span>
                         <ExternalLink aria-hidden="true" />
                       </a>
-                    ) : null}
+                    ) : (
+                      <span
+                        className="project-cta project-cta-disabled"
+                        aria-disabled="true"
+                        title="Repositório em breve"
+                      >
+                        <span>Ver projeto</span>
+                        <ExternalLink aria-hidden="true" />
+                      </span>
+                    )}
                   </>
                 ) : null}
               </div>

@@ -151,14 +151,13 @@ export const projects: Project[] = [
       "Laboratório de QA Automation com testes de API e automação Web, usando REST Assured, Cypress, PostgreSQL, Docker e CI/CD com evidências no Cypress Cloud.",
   },
   {
-    title: "Preview Out",
+    title: "Web & API Quality Lab",
     image: playwrightImage,
-    imageAlt: "Capa do projeto Preview Out com automação Playwright",
-    href: "https://github.com/koyama8/playwright-web-api-lab",
-    tags: ["Playwright", "Node.js", "E2E", "API"],
+    imageAlt: "Capa do projeto Web & API Quality Lab com automação Playwright",
+    tags: ["Playwright", "Web", "API"],
     tone: "gold",
     description:
-      "Automação E2E com Playwright para fluxos web integrados à API e banco de dados, usando Page Objects, massa de testes, Docker e relatórios em nuvem.",
+      "Laboratório de automação E2E com Playwright para jornadas Web integradas à API, banco de dados, Docker e relatórios em nuvem.",
   },
   {
     title: "Automation Hub",
@@ -166,8 +165,8 @@ export const projects: Project[] = [
     imageAlt: "Tela do projeto Automation Hub com formulário de acesso QA Automation Lab",
     href: "https://github.com/koyama8/automation-hub",
     description:
-      "Projeto criado para organizar fluxos de automação QA, validar telas web e praticar cenários reais com Cypress, Playwright, API e evidências usando dados locais.",
-    tags: ["Cypress", "Playwright", "API"],
+      "Automação QA para Web e API, com testes de performance, qualidade, segurança e evidências rastreáveis.",
+    tags: ["Cypress", "API", "K6", "Lighthouse", "Segurança"],
     tone: "emerald",
   },
   {
