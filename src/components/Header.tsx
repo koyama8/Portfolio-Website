@@ -1,4 +1,4 @@
-import { ArrowRight, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { navItems, socialLinks } from "../data/portfolio";
 import { useActiveSection } from "../hooks/useActiveSection";
@@ -67,7 +67,7 @@ export function Header() {
             </a>
           ))}
           <a className="header-connect" href="#contact" onClick={() => setIsMenuOpen(false)}>
-            Vamos conversar <ArrowRight aria-hidden="true" />
+            Vamos conversar
           </a>
         </div>
       </nav>
@@ -79,7 +79,7 @@ export function Header() {
           </a>
         ))}
         <a className="header-connect" href="#contact">
-          Vamos conversar <ArrowRight aria-hidden="true" />
+          Vamos conversar
         </a>
       </div>
     </header>

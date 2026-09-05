@@ -13,8 +13,8 @@ import playwrightImage from "../../imagens/Playwright.png";
 export const navItems: NavItem[] = [
   { label: "Home", href: "#home" },
   { label: "Sobre", href: "#about" },
-  { label: "Projetos", href: "#portfolio" },
   { label: "Serviços", href: "#services" },
+  { label: "Projetos", href: "#portfolio" },
   { label: "Blog", href: "#blog" },
   { label: "Contato", href: "#contact" },
 ];

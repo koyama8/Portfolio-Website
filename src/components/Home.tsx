@@ -1,7 +1,6 @@
-import { ArrowDown, ArrowRight, BarChart3, Check, Sparkles, Trophy, Users, Zap } from "lucide-react";
+import { BarChart3, Check, Trophy, Users, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 import { projects } from "../data/portfolio";
-import { TechnologyExplorer } from "./home/TechnologyExplorer";
 
 const competencies = ["Testes Web e APIs", "Frameworks e CI/CD", "Foco em qualidade"];
 const stats = [
@@ -23,15 +22,11 @@ export function Home() {
             {competencies.map((item) => <li key={item}><Check aria-hidden="true" />{item}</li>)}
           </ul>
           <div className="home-actions" aria-label="Ações principais">
-            <a className="home-action-primary" href="#portfolio">Ver meus projetos <ArrowRight aria-hidden="true" /></a>
-            <a className="home-action-secondary" href="#contact">Vamos conversar <ArrowDown aria-hidden="true" /></a>
+            <a className="home-action-primary" href="#portfolio">Ver meus projetos</a>
+            <a className="home-action-secondary" href="#contact">Vamos conversar</a>
           </div>
         </motion.div>
 
-        <motion.div className="home-explorer-wrap" initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.08, ease: "easeOut" }}>
-          <span className="explorer-label"><Sparkles aria-hidden="true" />Stack em destaque</span>
-          <TechnologyExplorer />
-        </motion.div>
       </div>
 
       <div className="home-proof">

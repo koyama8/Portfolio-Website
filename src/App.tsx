@@ -7,6 +7,7 @@ import { Blog } from "./components/Blog";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { CypressArticle } from "./components/CypressArticle";
+import { CtflArticle } from "./components/CtflArticle";
 
 export default function App() {
   const [hash, setHash] = useState(window.location.hash);
@@ -19,6 +20,10 @@ export default function App() {
 
   if (hash === "#blog/cypress") {
     return <main><CypressArticle /></main>;
+  }
+
+  if (hash === "#blog/ctfl") {
+    return <main><CtflArticle /></main>;
   }
 
   return (

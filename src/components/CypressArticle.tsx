@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { ArrowLeft, ArrowUpRight, Check, CircleGauge, CloudCog, Database, FileChartColumn, Globe2, Network, ShieldCheck } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Check, CircleGauge, CloudCog, Database, FileChartColumn, Gauge, Globe2, LockKeyhole, Network, ShieldCheck } from "lucide-react";
 import { SiCypress } from "react-icons/si";
 
 const articleSections = [
@@ -8,6 +8,7 @@ const articleSections = [
   { id: "dados-e-isolamento", label: "Engenharia de dados" },
   { id: "relatorios", label: "Métricas e relatórios" },
   { id: "pipeline", label: "Quality gates no CI/CD" },
+  { id: "requisitos-avancados", label: "Requisitos avançados" },
   { id: "governanca", label: "Governança e limites" },
   { id: "referencias", label: "Referências" },
 ];
@@ -219,6 +220,83 @@ cy.get('[data-cy="customer-list"]').should('be.visible')`}</code></pre>
             </p>
           </section>
 
+          <section id="requisitos-avancados">
+            <span className="article-section-icon"><ShieldCheck aria-hidden="true" /></span>
+            <p className="article-eyebrow">REQUISITOS AVANÇADOS PARA QE E SDET</p>
+            <h2>Qualidade também protege dados, segurança e desempenho</h2>
+            <p>
+              Uma estratégia de automação torna-se incompleta quando valida apenas o caminho feliz. Sistemas reais
+              operam sob entradas malformadas, picos de acesso, integrações lentas e regras de privacidade. O papel de
+              Quality Engineering é transformar esses riscos em critérios verificáveis, usando Cypress onde ele oferece
+              boa observabilidade e integrando ferramentas especializadas quando o problema exige outra abordagem.
+            </p>
+
+            <div className="article-advanced-grid">
+              <article className="article-advanced-card security">
+                <span className="article-advanced-label"><LockKeyhole aria-hidden="true" />Segurança e privacidade</span>
+                <h3>Teste funcional não substitui segurança, mas deve revelar exposições básicas</h3>
+                <p>
+                  Fixtures e massas não devem conter CPF, e-mail corporativo, tokens ou qualquer dado pessoal real.
+                  Use dados sintéticos ou mascarados e aplique a mesma proteção a screenshots, vídeos, logs e relatórios,
+                  pois esses artefatos também podem vazar informação durante o pipeline.
+                </p>
+                <p>
+                  Chaves, senhas e tokens pertencem ao cofre de segredos do CI/CD e entram por variáveis de ambiente.
+                  O arquivo <code>.env.example</code> documenta somente nomes e formatos esperados, nunca valores válidos.
+                  Essa separação reduz exposição acidental e facilita rotação de credenciais por ambiente.
+                </p>
+                <p>
+                  Cenários automatizados podem enviar entradas malformadas e strings inofensivas que representem
+                  tentativas de XSS ou SQL Injection, confirmando validação, escaping, mensagens e códigos de resposta.
+                  A cobertura aprofundada deve seguir o OWASP WSTG e ser executada com DAST, revisão de código e testes
+                  de segurança autorizados. Cypress complementa esse trabalho; não substitui pentest.
+                </p>
+                <ul className="article-checklist compact">
+                  <li><Check aria-hidden="true" />Massas sintéticas e artefatos sem dados pessoais</li>
+                  <li><Check aria-hidden="true" />Segredos fora do código e com rotação definida</li>
+                  <li><Check aria-hidden="true" />Cenários negativos na interface e diretamente na API</li>
+                  <li><Check aria-hidden="true" />DAST separado, autorizado e rastreável no pipeline</li>
+                </ul>
+              </article>
+
+              <article className="article-advanced-card performance">
+                <span className="article-advanced-label"><Gauge aria-hidden="true" />Performance e capacidade</span>
+                <h3>Desempenho precisa de baseline, percentis e contexto de usuário</h3>
+                <p>
+                  Lighthouse fornece uma auditoria de laboratório útil para impedir regressões óbvias. Para experiência
+                  real, acompanhe os Core Web Vitals no percentil 75, separados entre mobile e desktop: LCP de até 2,5 s,
+                  INP de até 200 ms e CLS de até 0,1 representam a faixa considerada boa pela documentação do Chrome.
+                </p>
+                <p>
+                  O resultado de laboratório não substitui telemetria de campo. Rede, dispositivo, cache e comportamento
+                  do usuário alteram a experiência. O gate deve comparar a página com seu baseline e explicar qual
+                  recurso regrediu, em vez de bloquear uma entrega apenas por uma nota agregada do Lighthouse.
+                </p>
+                <p>
+                  Para APIs, k6 ou JMeter simulam concorrência e avaliam latência, throughput e taxa de erro. Um smoke de
+                  10 usuários virtuais por 30 segundos com <code>p(95) &lt; 800 ms</code> e erros abaixo de 1% é um ponto
+                  inicial demonstrativo, não um SLA universal. O limite correto nasce do volume esperado, da capacidade
+                  do ambiente e do objetivo de nível de serviço acordado com o negócio.
+                </p>
+                <pre><code>{`export const options = {
+  vus: 10,
+  duration: '30s',
+  thresholds: {
+    http_req_duration: ['p(95)<800'],
+    http_req_failed: ['rate<0.01'],
+  },
+}`}</code></pre>
+              </article>
+            </div>
+
+            <div className="article-requirement-flow" aria-label="Integração de requisitos avançados">
+              <span><strong>Funcional</strong>Cypress valida jornada e integração</span>
+              <span><strong>Segurança</strong>OWASP e DAST exploram superfícies de ataque</span>
+              <span><strong>Performance</strong>Lighthouse e k6 medem experiência e capacidade</span>
+              <span><strong>Decisão</strong>Relatórios consolidam risco e evidência</span>
+            </div>
+          </section>
+
           <section id="governanca">
             <span className="article-section-icon"><ShieldCheck aria-hidden="true" /></span>
             <p className="article-eyebrow">GOVERNANÇA</p>
@@ -262,6 +340,9 @@ cy.get('[data-cy="customer-list"]').should('be.visible')`}</code></pre>
               <a href="https://docs.cypress.io/app/core-concepts/test-isolation" target="_blank" rel="noreferrer"><span><strong>Test isolation</strong>Estado do navegador e independência</span><ArrowUpRight aria-hidden="true" /></a>
               <a href="https://docs.cypress.io/app/guides/api-testing" target="_blank" rel="noreferrer"><span><strong>API testing</strong>Estratégias para suítes de serviços</span><ArrowUpRight aria-hidden="true" /></a>
               <a href="https://docs.cypress.io/cloud/features/analytics/enterprise-reporting" target="_blank" rel="noreferrer"><span><strong>Enterprise Reporting</strong>Métricas, tendências e dados brutos</span><ArrowUpRight aria-hidden="true" /></a>
+              <a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/" target="_blank" rel="noreferrer"><span><strong>OWASP WSTG</strong>Validação de entrada e testes de segurança Web</span><ArrowUpRight aria-hidden="true" /></a>
+              <a href="https://web.dev/articles/vitals" target="_blank" rel="noreferrer"><span><strong>Core Web Vitals</strong>LCP, INP e CLS para experiência de usuário</span><ArrowUpRight aria-hidden="true" /></a>
+              <a href="https://grafana.com/docs/k6/latest/using-k6/thresholds/" target="_blank" rel="noreferrer"><span><strong>Thresholds no k6</strong>Critérios de aprovação para performance</span><ArrowUpRight aria-hidden="true" /></a>
             </div>
           </section>
 
