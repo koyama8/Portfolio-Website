@@ -92,7 +92,7 @@ const getTagIcon = (tag: string) => {
 export function Portfolio() {
   return (
     <section className="portfolio" id="portfolio">
-      <SectionHeading prefix="Latest" highlight="Projects" />
+      <SectionHeading prefix="Projetos" highlight="recentes" />
 
       <div className="portfolio-container">
         {projects.map((project, index) => {
