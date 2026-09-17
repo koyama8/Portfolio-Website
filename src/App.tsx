@@ -19,12 +19,21 @@ export default function App() {
     return () => window.removeEventListener("hashchange", handleHashChange);
   }, []);
 
-  if (hash === "#blog/cypress") {
-    return <main><CypressArticle /></main>;
+  const cypressRoute = "#blog/cypress";
+  const ctflRoute = "#blog/ctfl";
+  const cypressSection = hash.startsWith(`${cypressRoute}/`)
+    ? decodeURIComponent(hash.slice(cypressRoute.length + 1))
+    : undefined;
+  const ctflSection = hash.startsWith(`${ctflRoute}/`)
+    ? decodeURIComponent(hash.slice(ctflRoute.length + 1))
+    : undefined;
+
+  if (hash === cypressRoute || cypressSection) {
+    return <main><CypressArticle sectionId={cypressSection} /></main>;
   }
 
-  if (hash === "#blog/ctfl") {
-    return <main><CtflArticle /></main>;
+  if (hash === ctflRoute || ctflSection) {
+    return <main><CtflArticle sectionId={ctflSection} /></main>;
   }
 
   return (

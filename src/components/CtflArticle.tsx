@@ -48,7 +48,11 @@ const articleSections = [
   { id: "referencias-ctfl", label: "Referências oficiais" },
 ];
 
-export function CtflArticle() {
+type CtflArticleProps = {
+  sectionId?: string;
+};
+
+export function CtflArticle({ sectionId }: CtflArticleProps) {
   useEffect(() => {
     const previousTitle = document.title;
     document.title = "CTFL e Engenharia de Qualidade | Matheus Koyama";
@@ -56,6 +60,16 @@ export function CtflArticle() {
 
     return () => { document.title = previousTitle; };
   }, []);
+
+  useEffect(() => {
+    if (!sectionId) return;
+
+    const animationFrame = window.requestAnimationFrame(() => {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    return () => window.cancelAnimationFrame(animationFrame);
+  }, [sectionId]);
 
   return (
     <article className="cypress-article ctfl-article">
@@ -87,7 +101,7 @@ export function CtflArticle() {
       <div className="article-layout">
         <aside className="article-index" aria-label="Neste artigo">
           <strong>Neste artigo</strong>
-          <nav>{articleSections.map(({ id, label }) => <a key={id} href={`#${id}`}>{label}</a>)}</nav>
+          <nav>{articleSections.map(({ id, label }) => <a key={id} href={`#blog/ctfl/${id}`}>{label}</a>)}</nav>
         </aside>
 
         <div className="article-body">

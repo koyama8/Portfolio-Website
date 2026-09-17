@@ -13,7 +13,11 @@ const articleSections = [
   { id: "referencias", label: "Referências" },
 ];
 
-export function CypressArticle() {
+type CypressArticleProps = {
+  sectionId?: string;
+};
+
+export function CypressArticle({ sectionId }: CypressArticleProps) {
   useEffect(() => {
     const previousTitle = document.title;
     document.title = "Cypress na Engenharia de Qualidade | Matheus Koyama";
@@ -21,6 +25,16 @@ export function CypressArticle() {
 
     return () => { document.title = previousTitle; };
   }, []);
+
+  useEffect(() => {
+    if (!sectionId) return;
+
+    const animationFrame = window.requestAnimationFrame(() => {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    return () => window.cancelAnimationFrame(animationFrame);
+  }, [sectionId]);
 
   return (
     <article className="cypress-article">
@@ -53,7 +67,7 @@ export function CypressArticle() {
         <aside className="article-index" aria-label="Neste artigo">
           <strong>Neste artigo</strong>
           <nav>
-            {articleSections.map(({ id, label }) => <a key={id} href={`#${id}`}>{label}</a>)}
+            {articleSections.map(({ id, label }) => <a key={id} href={`#blog/cypress/${id}`}>{label}</a>)}
           </nav>
         </aside>
 

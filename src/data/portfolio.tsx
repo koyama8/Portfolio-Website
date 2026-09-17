@@ -114,6 +114,7 @@ export const projects: Project[] = [
     title: "Web & API Quality Lab",
     image: playwrightImage,
     imageAlt: "Capa do projeto Web & API Quality Lab com automação Playwright",
+    href: "https://github.com/koyama8/playwright-sdet-lab",
     tags: ["Playwright", "Web", "API"],
     tone: "gold",
     description:
