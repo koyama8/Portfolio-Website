@@ -30,8 +30,10 @@ const articles = [
     category: "Playwright",
     image: playwrightLabImage,
     imageAlt: "Emblema do Playwright com as máscaras verde e coral",
-    readTime: "8 min de leitura",
-    date: "Em produção",
+    readTime: "16 min de leitura",
+    date: "28 out. 2026",
+    type: "Guia técnico",
+    href: "#blog/playwright",
   },
   {
     title: "Contratos e testes de API",

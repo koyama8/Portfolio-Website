@@ -9,6 +9,7 @@ import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { CypressArticle } from "./components/CypressArticle";
 import { CtflArticle } from "./components/CtflArticle";
+import { PlaywrightArticle } from "./components/PlaywrightArticle";
 
 export default function App() {
   const [hash, setHash] = useState(window.location.hash);
@@ -21,11 +22,15 @@ export default function App() {
 
   const cypressRoute = "#blog/cypress";
   const ctflRoute = "#blog/ctfl";
+  const playwrightRoute = "#blog/playwright";
   const cypressSection = hash.startsWith(`${cypressRoute}/`)
     ? decodeURIComponent(hash.slice(cypressRoute.length + 1))
     : undefined;
   const ctflSection = hash.startsWith(`${ctflRoute}/`)
     ? decodeURIComponent(hash.slice(ctflRoute.length + 1))
+    : undefined;
+  const playwrightSection = hash.startsWith(`${playwrightRoute}/`)
+    ? decodeURIComponent(hash.slice(playwrightRoute.length + 1))
     : undefined;
 
   if (hash === cypressRoute || cypressSection) {
@@ -34,6 +39,10 @@ export default function App() {
 
   if (hash === ctflRoute || ctflSection) {
     return <main><CtflArticle sectionId={ctflSection} /></main>;
+  }
+
+  if (hash === playwrightRoute || playwrightSection) {
+    return <main><PlaywrightArticle sectionId={playwrightSection} /></main>;
   }
 
   return (
